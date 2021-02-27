@@ -1,0 +1,27 @@
+{
+  "name": "silentorb-web",
+  "description": "Silent Orb Website",
+  "author": "Christopher W. Johnson",
+  "private": true,
+  "scripts": {
+    "build": "./node_modules/.bin/ts-node scripts/build.ts",
+    "eslint": "./node_modules/.bin/eslint scripts/**/*.ts",
+    "dev": "./node_modules/.bin/http-server dist"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "handlebars": "^4.7.7",
+    "marked": "^2.0.1",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "eslint": "^7.20.0",
+    "http-server": "^0.12.3"
+  }
+}

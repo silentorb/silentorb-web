@@ -4,8 +4,8 @@
   "author": "Christopher W. Johnson",
   "private": true,
   "scripts": {
-    "build": "./node_modules/.bin/ts-node src/rendering/build.ts",
-    "eslint": "./node_modules/.bin/eslint scripts/**/*.ts",
+    "build": "./node_modules/.bin/ts-node scripts/build.ts",
+    "eslint": "./node_modules/.bin/eslint src/rendering/**/*.ts",
     "dev": "./node_modules/.bin/http-server dist"
   },
   "dependencies": {

@@ -4,13 +4,13 @@ subtitle: A Child's Fairytale World
 template: marloth 
 ---
 
-<partial name="ChildsFairytaleWorld"></partial>
+{{> childs-fairytale-world }}
 
 ### Get the Gist
 
 A princess who wants to be Queen
 
-A twisted dreamworld that wants to consume her
+A twisted dream world that wants to consume her
 
 A little mad boy and his band of ragtag companions who want to rescue her
 

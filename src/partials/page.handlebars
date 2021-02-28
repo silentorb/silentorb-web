@@ -4,10 +4,16 @@
     <title>Marloth</title>
     <meta charSet="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<article>
-    {{{content}}}
-</article>
+<main>
+    {{> header }}
+    <narrow>
+        <article>
+            {{{content}}}
+        </article>
+    </narrow>
+</main>
 </body>
 </html>

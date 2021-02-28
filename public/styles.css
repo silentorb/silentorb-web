@@ -1,0 +1,77 @@
+
+:root {
+    --common-spacing: 20px;
+}
+
+
+body {
+    background: black none repeat scroll 0 0;
+    font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+    color: rgb(247, 238, 225);
+}
+
+a:link, a:visited {
+    color: #9e9eca;
+}
+
+a:hover {
+    color: #cda4e4;
+}
+
+a.active {
+    color: #F5E8D3;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+main {
+    padding-top: var(--common-spacing);
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+}
+
+narrow {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+}
+
+.marloth-header {
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    align-items: center;
+}
+
+.header-image {
+    max-width: 450px;
+}
+
+.subtitle {
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.book-cover {
+    float: right;
+    width: 200pt;
+    margin:10pt;
+}
+
+.horizontal-line {
+    background: none repeat scroll 0 0 #B2BBB2;
+    display: block;
+    height: 1pt;
+    margin: 8pt auto;
+    width: 100%;
+}

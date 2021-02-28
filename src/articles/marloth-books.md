@@ -24,4 +24,4 @@ You can purchase "Marloth: A Child's Fairytale World" on <a target="_blank" href
 
 ### Play the Game
 
-There's also a [Marloth Game](./games.md)
+There's also a [Marloth Game](./marloth-games.md)

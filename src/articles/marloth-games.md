@@ -14,10 +14,10 @@ Coming Soon...
 
 ## The Book
 
-There's also a [fantasy book](./books.md)
+There's also a [fantasy book](./marloth-books.md)
 
 <!---
 ## Ye Old Game
 
-There was also a [previous Marloth game](marloth/game-old.md)
+There was also a [previous Marloth game](./marloth-game-old.md)
 -->

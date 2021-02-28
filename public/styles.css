@@ -45,7 +45,7 @@ narrow {
     align-items: center;
 }
 
-.marloth-header {
+header {
     width: 650px;
     display: flex;
     flex-direction: column;
@@ -62,16 +62,38 @@ narrow {
     text-transform: uppercase;
 }
 
-.book-cover {
-    float: right;
-    width: 200pt;
-    margin:10pt;
-}
-
 .horizontal-line {
     background: none repeat scroll 0 0 #B2BBB2;
     display: block;
     height: 1pt;
     margin: 8pt auto;
     width: 100%;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+menu :not(:last-child) {
+    margin-bottom: 25px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+footer .horizontal-line {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+footer img {
+    max-width: 110px;
 }

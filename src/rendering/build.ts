@@ -1,6 +1,6 @@
-import {getFilesRecursive} from './utility'
+import { getFilesRecursive } from './utility'
 import * as fs from 'fs'
-import {HandlebarsTemplate} from './types'
+import { HandlebarsTemplate } from './types'
 import * as path from 'path'
 
 const Handlebars = require('handlebars')
@@ -24,7 +24,7 @@ function customMarkedRenderer(directory: string) {
   renderer.link = function (href: string, title: string, text: string) {
     const target = href
       .replace(mdPattern, '')
-      .replace(/^\./, directory)
+      .replace(/^\./, '')
 
     return link(target, title, text)
   }
@@ -42,7 +42,7 @@ function customMarkedRenderer(directory: string) {
 }
 
 const loadMarkDown: ContentLoader<Article> = file => {
-  const dir = path.dirname(file).slice(articlesDirectory.length + 1)
+  const dir = '/' + path.dirname(file).slice(articlesDirectory.length + 1)
   const { content, data } = matter.read(file)
   const expanded = Handlebars.compile(content)({})
   const html = marked(expanded, { renderer: customMarkedRenderer(dir) })
@@ -58,13 +58,13 @@ function loadFiles<T = string>(directory: string, processor: ContentLoader<T>): 
       const key = file.slice(directory.length + 1)
         .split('.')[0]
 
-      return [ key, processor(file) ]
+      return [key, processor(file)]
     })
   )
 }
 
-function loadTemplates(): Map<string, HandlebarsTemplate> {
-  return loadFiles<HandlebarsTemplate>('src/templates', loadTemplate)
+function loadTemplates(directory: string): Map<string, HandlebarsTemplate> {
+  return loadFiles<HandlebarsTemplate>(directory, loadTemplate)
 }
 
 function loadArticles(): Map<string, Article> {
@@ -82,26 +82,43 @@ function loadPartials() {
 
 const outputDirectory = 'dist'
 
+const newWriteFile = (rootDirectory: string) => (relativePath: string, content: string): void => {
+  const filePath = `${rootDirectory}/${relativePath}`
+  fse.ensureDirSync(path.dirname(filePath))
+  fs.writeFileSync(filePath, content, 'utf8')
+}
+
 export function buildSite() {
+  console.log('Building site')
   loadPartials()
-  const templates = loadTemplates()
+  const templates = loadTemplates('src/templates')
+  const pages = loadTemplates('src/pages')
   const articles = loadArticles()
 
   fse.removeSync(outputDirectory)
   fse.ensureDirSync(outputDirectory)
   fse.copySync('public', outputDirectory)
 
-  for (const [ key, article ] of articles) {
+  const writeFile = newWriteFile(outputDirectory)
+
+  for (const [title, page] of pages) {
+    const html = page({
+      title,
+    })
+    writeFile(`${title}.html`, html)
+  }
+
+  for (const [key, article] of articles) {
     const directory = outputDirectory + '/' + key
-    fse.ensureDirSync(directory)
     const templateName = article.data.template
     const pageTemplate = templates.get(templateName)
     if (!pageTemplate)
       throw Error(`Could not find page template ${templateName}`)
 
-    const output = pageTemplate({
+    const html = pageTemplate({
       ...article,
     })
-    fs.writeFileSync(directory + '/index.html', output, 'utf8')
+    writeFile(`${key}/index.html`, html)
   }
+  console.log('Finished building site')
 }

@@ -22,6 +22,10 @@ Welcome to Marloth
 
 You can purchase "Marloth: A Child's Fairytale World" on <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
 
+### Get Meta
+
+Read the [Marloth Narrative Documentation](./marloth-narrative-documentation.md)
+
 ### Play the Game
 
 There's also a [Marloth Game](./marloth-games.md)

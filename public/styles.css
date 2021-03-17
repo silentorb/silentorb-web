@@ -1,13 +1,14 @@
 
 :root {
     --common-spacing: 20px;
+    --off-white: rgb(247, 238, 225);
 }
 
 
 body {
     background: black none repeat scroll 0 0;
     font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
-    color: rgb(247, 238, 225);
+    color: var(--off-white)
 }
 
 a:link, a:visited {
@@ -27,6 +28,10 @@ img {
     max-width: 100%;
     height: auto;
     width: auto;
+}
+
+h1 {
+    text-align: center;
 }
 
 main {
@@ -96,4 +101,15 @@ footer .horizontal-line {
 
 footer img {
     max-width: 110px;
+}
+
+article.reading {
+    background-color: #fffbf2;
+    color: #222;
+    padding: 40px;
+    line-height: 1.75;
+}
+
+article.reading a:link, article.reading a:visited {
+    color: #602f84;
 }

@@ -17,7 +17,7 @@ interface Article {
   data: any
 }
 
-function customMarkedRenderer(directory: string) {
+function customMarkedRenderer() {
   const mdPattern = /\.md$/
   const renderer = new marked.Renderer()
   const link = renderer.link.bind(renderer)
@@ -29,23 +29,14 @@ function customMarkedRenderer(directory: string) {
     return link(target, title, text)
   }
   return renderer
-  // return {
-  //   ...defaultRenderer,
-  //   link: function (href: string, title: string, text: string) {
-  //     const target = href
-  //       .replace(mdPattern, '')
-  //       .replace(/^\./, directory)
-  //
-  //     return defaultRenderer.link(href, title, text)
-  //   }
-  // }
 }
 
-const loadMarkDown: ContentLoader<Article> = file => {
-  const dir = '/' + path.dirname(file).slice(articlesDirectory.length + 1)
-  const { content, data } = matter.read(file)
+const loadMarkDown: (defaults?: any) => ContentLoader<Article> = defaults => file => {
+  const response = matter.read(file)
+  const { content } = response
+  const data = { ...defaults, ...response.data }
   const expanded = Handlebars.compile(content)({})
-  const html = marked(expanded, { renderer: customMarkedRenderer(dir) })
+  const html = marked(expanded, { renderer: customMarkedRenderer() })
   return { content: html, data }
 }
 
@@ -55,7 +46,7 @@ function loadFiles<T = string>(directory: string, processor: ContentLoader<T>): 
   const files = getFilesRecursive(directory)
   return new Map(
     files.map(file => {
-      const key = file.slice(directory.length + 1)
+      const key = path.basename(file)
         .split('.')[0]
 
       return [key, processor(file)]
@@ -67,8 +58,8 @@ function loadTemplates(directory: string): Map<string, HandlebarsTemplate> {
   return loadFiles<HandlebarsTemplate>(directory, loadTemplate)
 }
 
-function loadArticles(): Map<string, Article> {
-  return loadFiles(articlesDirectory, loadMarkDown)
+function loadArticles(directory: string, defaults?: any): Map<string, Article> {
+  return loadFiles(directory, loadMarkDown(defaults))
 }
 
 function loadPartials() {
@@ -88,12 +79,26 @@ const newWriteFile = (rootDirectory: string) => (relativePath: string, content: 
   fs.writeFileSync(filePath, content, 'utf8')
 }
 
+export function getRequiredConfigString(name: string): string {
+  const value = process.env[name]
+  if (!value)
+    throw Error(`Missing required environment variable ${name}`)
+
+  return value
+}
+
 export function buildSite() {
+  require('dotenv').config()
   console.log('Building site')
   loadPartials()
   const templates = loadTemplates('src/templates')
   const pages = loadTemplates('src/pages')
-  const articles = loadArticles()
+  // MARLOTH_DIR should point to the marloth-story-docs/docs directory
+  const marlothDirectory = getRequiredConfigString('MARLOTH_DIR')
+  const articles = new Map([
+    ...loadArticles(articlesDirectory),
+    ...loadArticles(marlothDirectory, { template: 'marloth', articleStyle: 'reading' }),
+  ])
 
   fse.removeSync(outputDirectory)
   fse.ensureDirSync(outputDirectory)
@@ -109,14 +114,14 @@ export function buildSite() {
   }
 
   for (const [key, article] of articles) {
-    const directory = outputDirectory + '/' + key
     const templateName = article.data.template
     const pageTemplate = templates.get(templateName)
     if (!pageTemplate)
       throw Error(`Could not find page template ${templateName}`)
 
     const html = pageTemplate({
-      ...article,
+      content: article.content,
+      ...article.data,
     })
     writeFile(`${key}/index.html`, html)
   }

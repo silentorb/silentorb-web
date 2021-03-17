@@ -10,7 +10,7 @@
 <main>
   {{> header }}
   <narrow>
-    <article>
+    <article{{#if articleStyle}} class="{{articleStyle}}"{{/if}}>
       {{> content }}
       {{{content}}}
     </article>

@@ -94,7 +94,8 @@ export function buildSite() {
   const templates = loadTemplates('src/templates')
   const pages = loadTemplates('src/pages')
   // MARLOTH_DIR should point to the marloth-story-docs/docs directory
-  const marlothDirectory = getRequiredConfigString('MARLOTH_DIR')
+  const k = __dirname
+  const marlothDirectory = process.env.MARLOTH_DIR || './node_modules/marloth-story-docs/docs'
   const articles = new Map([
     ...loadArticles(articlesDirectory),
     ...loadArticles(marlothDirectory, { template: 'marloth', articleStyle: 'reading' }),

@@ -1,4 +1,4 @@
-import { getFilesRecursive } from './utility'
+import { getFileNameWithoutExtension, getFilesRecursive } from './utility'
 import * as fs from 'fs'
 import { HandlebarsTemplate } from './types'
 import * as path from 'path'
@@ -46,8 +46,9 @@ function loadFiles<T = string>(directory: string, processor: ContentLoader<T>): 
   const files = getFilesRecursive(directory)
   return new Map(
     files.map(file => {
-      const key = path.basename(file)
-        .split('.')[0]
+      const key = getFileNameWithoutExtension(file)
+      if (!key)
+        throw new Error(`Could not find file ${file}`)
 
       return [key, processor(file)]
     })
@@ -65,7 +66,10 @@ function loadArticles(directory: string, defaults?: any): Map<string, Article> {
 function loadPartials() {
   const files = getFilesRecursive('src/partials')
   for (const file of files) {
-    const name = path.basename(file).split('.')[0]
+    const name = getFileNameWithoutExtension(file)
+    if (!name)
+      throw new Error(`Could not find partial ${name}`)
+
     const template = fs.readFileSync(file, 'utf8')
     Handlebars.registerPartial(name, template, { noEscape: true })
   }
@@ -93,9 +97,9 @@ export function buildSite() {
   loadPartials()
   const templates = loadTemplates('src/templates')
   const pages = loadTemplates('src/pages')
-  // MARLOTH_DIR should point to the marloth-story-docs/docs directory
+  // MARLOTH_STORY_DIR should point to the marloth-story-docs/docs directory
   const k = __dirname
-  const marlothDirectory = process.env.MARLOTH_DIR || './node_modules/marloth-story-docs/docs'
+  const marlothDirectory = process.env.MARLOTH_STORY_DIR || './node_modules/marloth-story-docs/docs'
   const articles = new Map([
     ...loadArticles(articlesDirectory),
     ...loadArticles(marlothDirectory, { template: 'marloth', articleStyle: 'reading' }),

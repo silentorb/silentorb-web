@@ -24,7 +24,7 @@ You can purchase "Marloth: A Child's Fairytale World" on <a target="_blank" href
 
 ### Get Meta
 
-Read the [Marloth Narrative Documentation](./marloth-narrative-documentation.md)
+Explore the [Marloth Narrative Design and Development](./marloth-narrative-development.md) pages
 
 ### Play the Game
 

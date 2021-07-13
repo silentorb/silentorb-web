@@ -121,7 +121,7 @@ export function buildSite() {
     const templateName = article.data.template
     const pageTemplate = templates.get(templateName)
     if (!pageTemplate)
-      throw Error(`Could not find page template ${templateName}`)
+      throw Error(`Could not find page template ${templateName} for page ${key}`)
 
     const html = pageTemplate({
       content: article.content,

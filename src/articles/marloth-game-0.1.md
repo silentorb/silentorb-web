@@ -16,6 +16,6 @@ The game currently features a minimal game loop where the player gathers food an
 
 Currently Marloth only supports Windows.
 
-* [Marloth 0.1 Windows x64]()
+* [Marloth 0.1.0 Windows x64](https://static.silentorb.com/games/marloth-0.1.0-win64.zip)
 
 There's also a [game manual](./marloth-game-0.1-manual.md).

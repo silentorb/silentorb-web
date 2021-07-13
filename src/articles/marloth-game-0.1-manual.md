@@ -1,8 +1,12 @@
+---
+title: Marloth 0.1 Manual
+template: marloth
+---
 # Marloth 0.1 Manual
 
 ## Overview
 
-* Marloth is a Roguelike Survival Horror game
+* [Marloth](./marloth-game-0.1.md) is a Roguelike Survival Horror game
 * Players explore a hostile world, gathering food and fighting monsters
 * This is an alpha version
 

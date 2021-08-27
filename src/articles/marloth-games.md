@@ -6,6 +6,8 @@ template: marloth
 
 Marloth is a game under development by [Silent Orb](/)
 
+{{> marloth-game-0.1-preview }}
+
 ## Releases
 
 * [Marloth Alpha 0.1](./marloth-game-0.1.md)

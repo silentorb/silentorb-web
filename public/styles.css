@@ -113,3 +113,7 @@ article.reading {
 article.reading a:link, article.reading a:visited {
     color: #602f84;
 }
+
+li:not(:last-child) {
+    margin-bottom: 15px;
+}

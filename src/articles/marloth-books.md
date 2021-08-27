@@ -16,15 +16,16 @@ A little mad boy and his band of ragtag companions who want to rescue her
 
 And a book of fairytales as their only guide
 
-Welcome to Marloth
+Welcome to *Marloth*
 
 ### Get the Book
 
-You can purchase "Marloth: A Child's Fairytale World" on <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
+The Marloth e-book is a free download
 
-### Get Meta
+* [Marloth: A Child's Fairytale World 2.0.0 - EPUB 3](https://static.silentorb.com/books/marloth-fairytale-2.0.0.epub)
+* [Marloth: A Child's Fairytale World 2.0.0 - Kindle](https://static.silentorb.com/books/marloth-fairytale-2.0.0.azw3)
 
-Explore the [Marloth Narrative Design and Development](./marloth-narrative-development.md) pages
+You can purchase the paperback book of "Marloth: A Child's Fairytale World" at <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
 
 ### Play the Game
 

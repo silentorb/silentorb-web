@@ -6,7 +6,7 @@ template: marloth
 
 {{> childs-fairytale-world }}
 
-### Get the Gist
+## Get the Gist
 
 A princess who wants to be Queen
 
@@ -18,7 +18,7 @@ And a book of fairytales as their only guide
 
 Welcome to *Marloth*
 
-### Get the Book
+## Get the Book
 
 Marloth is a surreal horror fantasy.  It is intended for ages 13 and up.
 
@@ -29,7 +29,7 @@ The Marloth e-book is a free download
 
 Changes between versions 1.0.0 and 2.0.0:
 
-* Toned down the references to violence and perversion, further relying on implication and euphemism
+* Toned down the references to violence, further relying on implication and euphemism
 * Many grammatical fixes
 * Fixed some plot inconsistencies
 * Enhanced some of the underlying patterns in the story 
@@ -37,6 +37,6 @@ Changes between versions 1.0.0 and 2.0.0:
 
 You can purchase the first edition (Version 1.0.0) paperback book of "Marloth: A Child's Fairytale World" at <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
 
-### Play the Game
+## Play the Game
 
 There's also a [Marloth Game](./marloth-games.md)

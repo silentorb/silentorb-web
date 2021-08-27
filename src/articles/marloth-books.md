@@ -20,12 +20,22 @@ Welcome to *Marloth*
 
 ### Get the Book
 
+Marloth is a surreal horror fantasy.  It is intended for ages 13 and up.
+
 The Marloth e-book is a free download
 
 * [Marloth: A Child's Fairytale World 2.0.0 - EPUB 3](https://static.silentorb.com/books/marloth-fairytale-2.0.0.epub)
 * [Marloth: A Child's Fairytale World 2.0.0 - Kindle](https://static.silentorb.com/books/marloth-fairytale-2.0.0.azw3)
 
-You can purchase the paperback book of "Marloth: A Child's Fairytale World" at <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
+Changes between versions 1.0.0 and 2.0.0:
+
+* Toned down the references to violence and perversion, further relying on implication and euphemism
+* Many grammatical fixes
+* Fixed some plot inconsistencies
+* Enhanced some of the underlying patterns in the story 
+* Lots of other minor improvements 
+
+You can purchase the first edition (Version 1.0.0) paperback book of "Marloth: A Child's Fairytale World" at <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
 
 ### Play the Game
 

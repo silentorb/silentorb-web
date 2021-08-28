@@ -20,7 +20,7 @@ Welcome to *Marloth*
 
 ## Get the Book
 
-Marloth is a surreal horror fantasy.  It is intended for ages 13 and up.
+Marloth is a surreal dark fantasy.  It is intended for ages 13 and up.
 
 The Marloth e-book is a free download
 

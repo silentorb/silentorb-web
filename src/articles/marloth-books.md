@@ -1,7 +1,11 @@
 ---
 title: Marloth
 subtitle: A Child's Fairytale World
-template: marloth 
+template: marloth
+headers:
+- <meta property="og:type" content="website">
+- <meta property="og:description" content="Marloth is a surreal dark fantasy book">
+- <meta property="og:image" itemprop="image" content="https://silentorb.com/images/marloth/childs-fairytale-world-cover.jpg">
 ---
 
 {{> childs-fairytale-world }}

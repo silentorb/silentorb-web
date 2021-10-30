@@ -113,6 +113,8 @@ export function buildSite() {
   for (const [title, page] of pages) {
     const html = page({
       title,
+      icon: "/images/s.ico",
+      iconType: "image/vnd.microsoft.icon",
     })
     writeFile(`${title}.html`, html)
   }

@@ -3,7 +3,7 @@ title: The Old Marloth Game
 template: marloth 
 ---
 
-This pages is for the old Marloth game.  The new game is [here](./marloth-games.md)
+This pages is for the old Marloth game.  The new game is [here](./games.md)
  
 Marloth Rogue was a Marloth computer game in development by Silent Orb. It was a first-person action/adventure featuring randomly generated worlds.
       

@@ -10,14 +10,14 @@ Marloth is a game under development by [Silent Orb](/)
 
 ## Releases
 
-* [Marloth Alpha 0.1](./marloth-game-0.1.md)
+* [Marloth Alpha 0.1](./game-0.1.md)
 
 ## The Book
 
-There's also a [fantasy book](./marloth-books.md)
+There's also a [fantasy book](./books.md)
 
 <!---
 ## Ye Old Game
 
-There was also a [previous Marloth game](./marloth-game-old.md)
+There was also a [previous Marloth game](./game-old.md)
 -->

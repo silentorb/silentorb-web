@@ -16,7 +16,25 @@ export function getFilesRecursive(fileOrDirectory: string): string[] {
   return flatten(hierarchy)
 }
 
-export function getFileNameWithoutExtension(file: string): string | undefined {
-  const match = path.basename(file).match(/^(.*)\.[^.]+$/)
+export function getPathWithoutExtension(file: string): string | undefined {
+  const match = file.match(/^(.*)\.[^.]+$/)
   return match ? match[1] : undefined
+}
+
+export function getFileNameWithoutExtension(file: string): string | undefined {
+  return getPathWithoutExtension(path.basename(file))
+}
+
+export function normalizeSlashes(text: string) {
+  return text.replace(/\\+/g, '/')
+}
+
+export function relativePath(directory: string, file: string) {
+  return normalizeSlashes(path.relative(directory, file))
+}
+
+export function absoluteRelativePath(directory: string, file: string) {
+  const relative = path.relative(directory, path.dirname(file))
+  const absolute = path.join(directory, file)
+  return normalizeSlashes(absolute)
 }

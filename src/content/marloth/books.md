@@ -43,4 +43,4 @@ You can purchase the first edition (Version 1.0.0) paperback book of "Marloth: A
 
 ## Play the Game
 
-There's also a [Marloth Game](./marloth-games.md)
+There's also a [Marloth Game](./games.md)

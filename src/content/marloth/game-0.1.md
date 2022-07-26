@@ -8,7 +8,7 @@ template: marloth
 
 {{> marloth-game-0.1-preview }}
 
-This is the first alpha release of a new [Marloth game](./marloth-games.md).
+This is the first alpha release of a new [Marloth game](./games.md).
 
 The game currently features a minimal game loop where the player gathers food and battles monsters to survive.
 
@@ -18,4 +18,4 @@ Currently Marloth only supports Windows.
 
 * [Marloth 0.1.0 Windows x64](https://static.silentorb.com/games/marloth-0.1.0-win64.zip)
 
-There's also a [game manual](./marloth-game-0.1-manual.md).
+There's also a [game manual](./game-0.1-manual.md).

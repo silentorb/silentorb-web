@@ -4,11 +4,8 @@
     --off-white: rgb(247, 238, 225);
 }
 
-
 body {
-    background: black none repeat scroll 0 0;
     font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
-    color: var(--off-white);
     caret-color: transparent;
 }
 
@@ -54,6 +51,7 @@ narrow {
     flex-direction: column;
     -moz-box-align: center;
     align-items: center;
+    padding: 30px;
 }
 
 header {
@@ -122,4 +120,10 @@ article.reading a:link, article.reading a:visited {
 
 li:not(:last-child) {
     margin-bottom: 15px;
+}
+
+blockquote {
+    padding: 0 15px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }

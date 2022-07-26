@@ -1,0 +1,13 @@
+body {
+    background: hsl(33deg 18% 78%) none repeat scroll 0 0;
+    color: black;
+}
+
+narrow {
+    background: white none repeat scroll 0 0;
+}
+
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    color: #777777;
+}

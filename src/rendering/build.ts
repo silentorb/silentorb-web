@@ -13,8 +13,10 @@ const Handlebars = require('handlebars')
 const matter = require('gray-matter')
 const marked = require('marked')
 const fse = require('fs-extra')
-
 const articlesDirectory = 'src/content'
+const simpleGit = require('simple-git')
+
+simpleGit().clean(simpleGit.CleanOptions.FORCE)
 
 export interface ContentLoaderParams {
   file: string
@@ -131,6 +133,7 @@ function convertArticle(templates: TemplateMap, writeFile: FileWriter, key: stri
 export function buildSite() {
   require('dotenv').config()
   console.log('Building site')
+  const git = simpleGit(process.cwd(), { binary: 'git' })
   loadPartials()
   const templates = loadTemplates('src/templates')
   const pages = loadTemplates('src/pages')

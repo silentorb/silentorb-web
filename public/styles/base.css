@@ -127,3 +127,13 @@ blockquote {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+.title-metadata {
+    float: right;
+    font-size: small;
+    color: gray;
+}
+
+a:hover.title-metadata {
+    color: black;
+}

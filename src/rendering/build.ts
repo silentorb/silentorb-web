@@ -8,15 +8,15 @@ import {
 import * as fs from 'fs'
 import { HandlebarsTemplate } from './types'
 import * as path from 'path'
+import git from 'isomorphic-git'
 
 const Handlebars = require('handlebars')
 const matter = require('gray-matter')
 const marked = require('marked')
 const fse = require('fs-extra')
 const articlesDirectory = 'src/content'
-const simpleGit = require('simple-git')
 
-simpleGit().clean(simpleGit.CleanOptions.FORCE)
+const baseGitUrl = 'https://github.com/silentorb/silentorb-web/blob/master/src/content'
 
 export interface ContentLoaderParams {
   file: string
@@ -28,6 +28,7 @@ export type ContentLoader<T> = (params: ContentLoaderParams) => T
 interface Article {
   content: string
   data: any
+  file: string
 }
 
 function customMarkedRenderer(parentPath: string = '') {
@@ -41,6 +42,14 @@ function customMarkedRenderer(parentPath: string = '') {
 
     return link(target, title, text)
   }
+
+  const heading = renderer.heading.bind(renderer)
+  renderer.heading = function (text: string, level: number, raw: string, slugger: any) {
+    return level > 1
+      ? heading(text, level, raw, slugger)
+      : ''
+  }
+
   return renderer
 }
 
@@ -50,7 +59,7 @@ const getTitleFromMarkdown = (data: any) => (token: any) => {
   }
 }
 
-const loadMarkDown: (defaults?: any) => ContentLoader<Article> = defaults => (params) => {
+const loadMarkDown: (defaults?: any) => ContentLoader<Article> = defaults => params => {
   const { file } = params
   const response = matter.read(file)
   const { content } = response
@@ -58,7 +67,7 @@ const loadMarkDown: (defaults?: any) => ContentLoader<Article> = defaults => (pa
   const expanded = Handlebars.compile(content)({})
   const walkTokens = data.title ? undefined : getTitleFromMarkdown(data)
   const html = marked(expanded, { renderer: customMarkedRenderer(params.parentPath), walkTokens })
-  return { content: html, data }
+  return { content: html, data, file }
 }
 
 const loadTemplate: ContentLoader<HandlebarsTemplate> = ({ file }) =>
@@ -109,6 +118,21 @@ const newWriteFile = (rootDirectory: string): FileWriter => (relativePath, conte
   fs.writeFileSync(filePath, content, 'utf8')
 }
 
+const padDateNumber = (value: number) =>
+  value.toString().padStart(2, '0')
+
+const formateDateString = (date: Date) =>
+  `${padDateNumber(date.getMonth() + 1)}/${padDateNumber(date.getDate())}/${date.getFullYear()}`
+
+async function loadGitMetaData(key: string, article: Article): Promise<Article> {
+  const commits = await git.log({ fs, dir: process.cwd(), depth: 1, filepath: article.file, })
+  const timestamp = commits[0]?.commit?.committer?.timestamp
+  const date = new Date(timestamp * 1000)
+  article.data.modifiedString = `Last modified: ${formateDateString(date)}`
+  article.data.gitUrl = `${baseGitUrl}/${key}.md`
+  return article
+}
+
 export function getRequiredConfigString(name: string): string {
   const value = process.env[name]
   if (!value)
@@ -130,10 +154,9 @@ function convertArticle(templates: TemplateMap, writeFile: FileWriter, key: stri
   writeFile(`${key}/index.html`, html)
 }
 
-export function buildSite() {
+export async function buildSite() {
   require('dotenv').config()
   console.log('Building site')
-  const git = simpleGit(process.cwd(), { binary: 'git' })
   loadPartials()
   const templates = loadTemplates('src/templates')
   const pages = loadTemplates('src/pages')
@@ -143,6 +166,10 @@ export function buildSite() {
     ...loadArticles(articlesDirectory),
     // ...loadArticles(marlothDirectory, { template: 'marloth', articleStyle: 'reading' }),
   ])
+
+  for (const [key, article] of articles) {
+    await loadGitMetaData(key, article)
+  }
 
   fse.removeSync(outputDirectory)
   fse.ensureDirSync(outputDirectory)

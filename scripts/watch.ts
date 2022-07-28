@@ -1,7 +1,7 @@
 import { buildSite } from '../src/rendering'
 
 const chokidar = require('chokidar')
-function watching() {
+async function watching() {
   const watcher = chokidar.watch(['src', 'public'], {
     ignoreInitial: true,
   })
@@ -11,12 +11,12 @@ function watching() {
     buildSite()
   })
 
-  buildSite()
+  await buildSite()
   console.log('Watching src')
 }
 
-function main() {
-  watching()
+async function main() {
+  await watching()
 }
 
 main()

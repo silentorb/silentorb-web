@@ -1,7 +1,7 @@
 import {buildSite} from '../src/rendering'
 
-function main() {
-  buildSite()
+async function main() {
+  await buildSite()
 }
 
 main()

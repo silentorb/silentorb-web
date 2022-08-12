@@ -19,6 +19,7 @@
 ## Focus
 
 * > Each tool should do one thing and do it well - the Unix Philosophy
+
 * There are two ditches on either side of the road: trying to do too little and trying to do too much
   * Software products rarely fall into the ditch of trying to do too little
 * As a company grows larger, it can afford to diversify more, but that diversification needs to be split into multiple products created by multiple teams

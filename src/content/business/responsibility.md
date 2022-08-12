@@ -30,7 +30,6 @@ Below is a common business story:
 * Once a business reaches such a position, the swindling is justified by arguments such as:
   * "It's the only way we can survive"
   * "There are employees depending on us"
-* 
 
 ---
 

@@ -13,5 +13,5 @@
 
 ---
 
-| [Previous: Appraisal](./appraisal.md) | [Index](./tech-company-business-strategy.md) | [Next: Strategy](./strategy) |
-| :-----------------------------------: | :------------------------------------------: | :--------------------------: |
+| [Previous: Appraisal](./appraisal.md) | [Index](./tech-company-business-strategy.md) | [Next: Strategy](./strategy.md) |
+| :-----------------------------------: | :------------------------------------------: | :-----------------------------: |

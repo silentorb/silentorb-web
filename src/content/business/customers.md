@@ -18,5 +18,5 @@
 
 ---
 
-| [Previous: Product](./product.md) | [Index](./tech-company-business-strategy.md) | [Next: Execution](./execution.md) |
-| :-------------------------------: | :------------------------------------------: | :-------------------------------: |
+| [Previous: Product](./product/index.md) | [Index](./tech-company-business-strategy.md) | [Next: Execution](./execution.md) |
+|:---------------------------------------:| :------------------------------------------: | :-------------------------------: |

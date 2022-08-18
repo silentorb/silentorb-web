@@ -1,5 +1,5 @@
 import {
-  absoluteRelativePath,
+  absoluteRelativePath, getDirName,
   getFileNameWithoutExtension,
   getFilesRecursive,
   getPathWithoutExtension,
@@ -19,11 +19,12 @@ const articlesDirectory = 'src/content'
 const baseGitUrl = 'https://github.com/silentorb/silentorb-web/blob/master/src/content'
 
 export interface ContentLoaderParams {
+  key: string
   file: string
   parentPath?: string
 }
 
-export type ContentLoader<T> = (params: ContentLoaderParams) => T
+export type ContentLoader<T> = (params: ContentLoaderParams) => [string, T]
 
 interface Article {
   content: string
@@ -31,8 +32,9 @@ interface Article {
   file: string
 }
 
+const mdPattern = /(\/index)?\.md$/
+
 function customMarkedRenderer(parentPath: string = '') {
-  const mdPattern = /\.md$/
   const renderer = new marked.Renderer()
   const link = renderer.link.bind(renderer)
   renderer.link = function (href: string, title: string, text: string) {
@@ -59,19 +61,22 @@ const getTitleFromMarkdown = (data: any) => (token: any) => {
   }
 }
 
+const indexPattern = /\/index$/
+
 const loadMarkDown: (defaults?: any) => ContentLoader<Article> = defaults => params => {
-  const { file } = params
+  const { key, file } = params
   const response = matter.read(file)
   const { content } = response
   const data = { ...defaults, ...response.data }
   const expanded = Handlebars.compile(content)({})
   const walkTokens = data.title ? undefined : getTitleFromMarkdown(data)
   const html = marked(expanded, { renderer: customMarkedRenderer(params.parentPath), walkTokens })
-  return { content: html, data, file }
+  const filteredKey = key.replace(indexPattern, '')
+  return [filteredKey, { content: html, data, file }]
 }
 
-const loadTemplate: ContentLoader<HandlebarsTemplate> = ({ file }) =>
-  Handlebars.compile(fs.readFileSync(file, 'utf8'))
+const loadTemplate: ContentLoader<HandlebarsTemplate> = ({ key, file }) =>
+  [key, Handlebars.compile(fs.readFileSync(file, 'utf8'))]
 
 function loadFiles<T = string>(directory: string, processor: ContentLoader<T>): Map<string, T> {
   const files = getFilesRecursive(directory)
@@ -79,10 +84,10 @@ function loadFiles<T = string>(directory: string, processor: ContentLoader<T>): 
     files.map(file => {
       const relative = relativePath(directory, file)
       const key = getPathWithoutExtension(relative)
-      if (!key)
+        if (!key)
         throw new Error(`Could not find file ${file}`)
 
-      return [key, processor({ file, parentPath: path.dirname(key) })]
+      return processor({ key, file, parentPath: path.dirname(key) })
     })
   )
 }
@@ -114,6 +119,7 @@ export type FileWriter = (relativePath: string, content: string) => void
 
 const newWriteFile = (rootDirectory: string): FileWriter => (relativePath, content) => {
   const filePath = `${rootDirectory}/${relativePath}`
+
   fse.ensureDirSync(path.dirname(filePath))
   fs.writeFileSync(filePath, content, 'utf8')
 }
@@ -168,7 +174,10 @@ export async function buildSite() {
   ])
 
   for (const [key, article] of articles) {
-    await loadGitMetaData(key, article)
+    try {
+      await loadGitMetaData(key, article)
+    } catch {
+    }
   }
 
   fse.removeSync(outputDirectory)

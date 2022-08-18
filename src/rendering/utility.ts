@@ -33,6 +33,10 @@ export function relativePath(directory: string, file: string) {
   return normalizeSlashes(path.relative(directory, file))
 }
 
+export function getDirName(filePath: string) {
+  return normalizeSlashes(path.dirname(filePath))
+}
+
 export function absoluteRelativePath(directory: string, file: string) {
   const relative = path.relative(directory, path.dirname(file))
   const absolute = path.join(directory, file)

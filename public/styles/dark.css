@@ -2,3 +2,15 @@ body {
     background: black none repeat scroll 0 0;
     color: var(--off-white);
 }
+
+a:link, a:visited {
+    color: #9e9eca;
+}
+
+a:hover {
+    color: #cda4e4;
+}
+
+a.active {
+    color: #F5E8D3;
+}

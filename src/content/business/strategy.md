@@ -40,5 +40,5 @@
 
 ---
 
-| [Previous: Vision](./vision.md) | [Index](./tech-company-business-strategy.md) | [Next: Product](./product.md) |
-| :-----------------------------: | :------------------------------------------: | :---------------------------: |
+| [Previous: Vision](./vision.md) | [Index](./tech-company-business-strategy.md) | [Next: Product](./product/index.md) |
+| :-----------------------------: | :------------------------------------------: |:----------------------------:|

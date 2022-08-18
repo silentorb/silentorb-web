@@ -1,6 +1,22 @@
 body {
-    background: hsl(33deg 18% 78%) none repeat scroll 0 0;
+    background: #6a2515 none repeat scroll 0 0;
     color: black;
+}
+
+a:link {
+    color: #854755;
+}
+
+a:visited {
+    color: #b0828c;
+}
+
+a:hover {
+    color: #c74794;
+}
+
+a.active {
+    color: #d49b40;
 }
 
 narrow {
@@ -10,4 +26,16 @@ narrow {
 blockquote {
     border-left: 4px solid #dfe2e5;
     color: #777777;
+}
+
+main {
+    background: hsl(33deg 18% 78%) none repeat scroll 0 0;
+}
+
+main::after {
+
+}
+
+.side-margin {
+    background: hsl(33deg 18% 78%) none repeat scroll 0 0;
 }

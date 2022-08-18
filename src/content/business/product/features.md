@@ -1,6 +1,6 @@
-# Product
+# Product Features
 
-## Features
+## Minimal Viable Product
 
 >  My boxer is the best boxer in the world!  He can beat anyone in the ring!  All he needs is a club.  And maybe a gun.  And the opponent needs his hands tied behind his back.  With just those features, my boxer can beat anyone!
 
@@ -32,5 +32,5 @@
 
 ---
 
-| [Previous: Strategy](./strategy.md) | [Index](./tech-company-business-strategy.md) | [Next: Customers](./customers.md) |
-| :---------------------------------: | :------------------------------------------: | :-------------------------------: |
+| [Previous: Strategy](../strategy.md) | [Index](./index.md) | [Next: Scoping and Design](./scoping-and-design.md) |
+|:------------------------------------:|:-------------------:|:---------------------------------------------------:|

@@ -121,6 +121,7 @@ blockquote {
     float: right;
     font-size: small;
     color: gray;
+    margin-left: 30px;
 }
 
 a:hover.title-metadata {

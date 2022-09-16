@@ -10,5 +10,6 @@ A collection of articles guiding tech companies in how to be both successful and
 4. [Product](./product/index.md)
 5. [Customers](./customers.md)
 6. [Execution](./execution.md)
-7. [Organization](./organization.md)
+7. [Organization](./operations/organization.md)
+8. [Communication](./operations/communication.md)
 

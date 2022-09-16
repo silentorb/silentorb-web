@@ -25,5 +25,5 @@
 
 ---
 
-| [Previous: Customers](./customers.md) | [Index](./tech-company-business-strategy.md) | [Next: Organization](./organization.md) |
-| :-----------------------------------: | :------------------------------------------: | :-------------------------------------: |
+| [Previous: Customers](./customers.md) | [Index](./tech-company-business-strategy.md) | [Next: Organization](./operations/organization.md) |
+| :-----------------------------------: | :------------------------------------------: | :------------------------------------------------: |

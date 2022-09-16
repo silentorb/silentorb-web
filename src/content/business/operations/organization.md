@@ -65,5 +65,5 @@
 
 ---
 
-| [Previous: Execution](./execution.md) | [Index](./tech-company-business-strategy.md) | [Loop: Appraisal](./appraisal.md) |
-| :-----------------------------------: | :------------------------------------------: | :-------------------------------: |
+| [Previous: Execution](../execution.md) | [Index](../tech-company-business-strategy.md) | [Next: Communication](./communication.md) |
+| :------------------------------------: | :-------------------------------------------: | :---------------------------------------: |

@@ -37,6 +37,6 @@ Before setting out on a venture:
 
 ---
 
-| [Loop: Organization](./organization.md) | [Index](./tech-company-business-strategy.md) | [Next: Vision](./vision.md) |
-| :-------------------------------------: | :------------------------------------------: | :-------------------------: |
+| [Loop: Communication](./operations/communication.md) | [Index](./tech-company-business-strategy.md) | [Next: Vision](./vision.md) |
+| :--------------------------------------------------: | :------------------------------------------: | :-------------------------: |
 

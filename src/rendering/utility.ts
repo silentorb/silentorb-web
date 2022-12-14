@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as path from "path"
+import { ContentLoader } from './build'
 
 export function flatten<T>(input: T[][]): T[] {
   return [].concat.apply([], input as any)
@@ -41,4 +42,18 @@ export function absoluteRelativePath(directory: string, file: string) {
   const relative = path.relative(directory, path.dirname(file))
   const absolute = path.join(directory, file)
   return normalizeSlashes(absolute)
+}
+
+export function loadFiles<T = string>(directory: string, processor: ContentLoader<T>): Map<string, T> {
+  const files = getFilesRecursive(directory)
+  return new Map(
+    files.map(file => {
+      const relative = relativePath(directory, file)
+      const key = getPathWithoutExtension(relative)
+      if (!key)
+        throw new Error(`Could not find file ${file}`)
+
+      return processor({ key, file, parentPath: path.dirname(key) })
+    })
+  )
 }

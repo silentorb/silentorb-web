@@ -1,6 +1,6 @@
 import { getFileNameWithoutExtension, getFilesRecursive, loadFiles } from './utility'
 import * as fs from 'fs'
-import { Article, ContentLoader, HandlebarsTemplate } from './types'
+import { Article, ArticleMap, ContentLoader, HandlebarsTemplate } from './types'
 import * as path from 'path'
 
 const Handlebars = require('handlebars')
@@ -72,7 +72,7 @@ export function loadSiteResources(): SiteResources {
   }
 }
 
-export function writeHtmlFiles(outputDirectory: string, resources: SiteResources, articles: Map<string, Article>) {
+export function writeHtmlFiles(outputDirectory: string, resources: SiteResources, articles: ArticleMap) {
   const { pages, templates } = resources
   const writeFile = newWriteFile(outputDirectory)
 

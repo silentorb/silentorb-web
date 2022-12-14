@@ -27,6 +27,7 @@
     "chokidar": "^3.5.1",
     "concurrently": "^7.3.0",
     "eslint": "^7.20.0",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "markdown-link-check": "^3.10.3"
   }
 }

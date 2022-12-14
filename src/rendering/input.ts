@@ -1,7 +1,9 @@
-import { absoluteRelativePath, loadFiles } from './utility'
+import { absoluteRelativePath, getDirName, loadFiles } from './utility'
 import * as fs from 'fs'
-import { Article, ContentLoader } from './types'
+import { Article, ArticleMap, ContentLoader } from './types'
 import git from 'isomorphic-git'
+import * as path from 'path'
+import { promisify } from 'util'
 
 const Handlebars = require('handlebars')
 const matter = require('gray-matter')
@@ -50,10 +52,10 @@ const loadMarkDown: (defaults?: any) => ContentLoader<Article> = defaults => par
   const walkTokens = data.title ? undefined : getTitleFromMarkdown(data)
   const html = marked(expanded, { renderer: customMarkedRenderer(params.parentPath), walkTokens })
   const filteredKey = key.replace(indexPattern, '')
-  return [filteredKey, { content: html, data, file }]
+  return [filteredKey, { content: html, original: content, data, file }]
 }
 
-function loadArticles(directory: string, defaults?: any): Map<string, Article> {
+function loadArticles(directory: string, defaults?: any): ArticleMap {
   return loadFiles(directory, loadMarkDown(defaults))
 }
 
@@ -72,11 +74,27 @@ async function loadGitMetaData(key: string, article: Article): Promise<Article> 
   return article
 }
 
+async function checkLinks(articles: ArticleMap) {
+  const promisify = require('util').promisify
+  const markdownLinkCheck = promisify(require('markdown-link-check'))
+  for (let [key, article] of articles) {
+    const directoryPath = path.resolve((getDirName(article.file)))
+    const result = await markdownLinkCheck(article.original, { baseUrl: `file://${directoryPath}` })
+    if (result.status == 'dead') {
+      console.error('result', result, key)
+    }
+  }
+}
+
 export async function loadAndPrepareArticles() {
-  const articles = new Map([
+  const articles: ArticleMap = new Map([
     ...loadArticles(articlesDirectory),
     // ...loadArticles(marlothDirectory, { template: 'marloth', articleStyle: 'reading' }),
   ])
+
+  if (process.env.CHECK_LINKS) {
+    await checkLinks(articles)
+  }
 
   for (const [key, article] of articles) {
     try {

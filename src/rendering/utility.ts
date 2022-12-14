@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from "path"
-import { ContentLoader } from './build'
+import { ContentLoader } from './types'
 
 export function flatten<T>(input: T[][]): T[] {
   return [].concat.apply([], input as any)

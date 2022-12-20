@@ -14,7 +14,7 @@ phases:
       - yarn run build
   post_build:
     commands:
-      - echo Build completed on `date`
+      - aws s3 rm --recursive "s3://${ARTIFACTS_BUCKET}/"
 artifacts:
   base-directory: dist
   files:

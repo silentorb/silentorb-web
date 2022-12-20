@@ -4,6 +4,8 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+    commands:
+      - echo Nothing to install
   pre_build:
     commands:
       - yarn install

@@ -10,7 +10,7 @@ Marloth is a game under development by [Silent Orb](/)
 
 ## Releases
 
-* [Marloth Alpha 0.1](./game-0.1-alpha.md)
+* [Marloth Alpha 0.1](./game-0-1-alpha.md)
 
 ## The Book
 

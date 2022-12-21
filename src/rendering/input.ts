@@ -3,7 +3,6 @@ import * as fs from 'fs'
 import { Article, ArticleMap, ContentLoader } from './types'
 import git from 'isomorphic-git'
 import * as path from 'path'
-import { promisify } from 'util'
 
 const Handlebars = require('handlebars')
 const matter = require('gray-matter')

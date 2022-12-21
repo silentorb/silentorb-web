@@ -17,9 +17,6 @@ Below is a common business story:
    2. Multiple people depend on the business for their own survival
 
 * Those arguments are fallacies
-
-
-
 * Bad business models are sometimes rationalized by the following arguments
   * That the bad business model is the only way the company can survive
   * That employees are depending on the success of 

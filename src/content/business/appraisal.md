@@ -10,7 +10,7 @@ The primary causes of failure are:
 1. Not knowing the cost
 2. Being unwilling or unable to pay the cost
 
-### Redirection
+### Adjustment
 
 * If you don't know the cost, either learn the cost or find a new goal
 * If you are unwilling or unable to pay the cost, find a new goal
@@ -25,7 +25,7 @@ The primary causes of failure are:
 ## Value
 
 * Beyond standard failure and into the realm of success is another form of failure: overvaluing a goal
-* A venture can effectively fail if success is overvalued to the point that the cost exceeds the benefit
+* A venture can effectively fail if success is overvalued and the cost exceeds the benefit
 * As with most of life, business is about appraisal—knowing the value of a thing
 
 ## Application
@@ -37,6 +37,6 @@ Before setting out on a venture:
 
 ---
 
-| [Loop: Communication](./operations/communication.md) | [Index](./tech-company-business-strategy.md) | [Next: Vision](./vision.md) |
-| :--------------------------------------------------: | :------------------------------------------: | :-------------------------: |
+| [Previous: Benevolence](./benevolence.md) | [Index](./tech-company-business-strategy.md) | [Next: Vision](./vision.md) |
+| :---------------------------------------: | :------------------------------------------: | :-------------------------: |
 

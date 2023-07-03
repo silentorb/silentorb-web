@@ -12,4 +12,5 @@ A collection of articles guiding tech companies in how to be both successful and
 6. [Execution](./execution.md)
 7. [Organization](./operations/organization.md)
 8. [Communication](./operations/communication.md)
+9. [Responsibility](./responsibility.md)
 

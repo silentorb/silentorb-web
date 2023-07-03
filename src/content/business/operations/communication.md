@@ -84,5 +84,5 @@
   * When those people are also vocal within that forum, other people's time is wasted as well
 * When a forum lacks essential participants, time is wasted for everyone within that forum and everyone dependent on the output of that forum
 
-| [Previous: Organization](./organization.md) | [Index](../tech-company-business-strategy.md) | [Loop: Appraisal](../appraisal.md) |
-| :-----------------------------------------: | :-------------------------------------------: | :--------------------------------: |
+| [Previous: Organization](./organization.md) | [Index](../tech-company-business-strategy.md) | [Benevolence](../benevolence.md) |
+| :-----------------------------------------: | :-------------------------------------------: | :------------------------------: |

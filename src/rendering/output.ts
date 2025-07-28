@@ -1,31 +1,9 @@
 import { getFileNameWithoutExtension, getFilesRecursive, loadFiles } from './utility'
 import * as fs from 'fs'
-import { Article, ArticleMap, ContentLoader, HandlebarsTemplate } from './types'
+import { Article, ArticleMap, SiteResources, TemplateMap } from './types'
 import * as path from 'path'
 
-const Handlebars = require('handlebars')
 const fse = require('fs-extra')
-
-const loadTemplate: ContentLoader<HandlebarsTemplate> = ({ key, file }) =>
-  [key, Handlebars.compile(fs.readFileSync(file, 'utf8'))]
-
-export type TemplateMap = Map<string, HandlebarsTemplate>
-
-function loadTemplates(directory: string): TemplateMap {
-  return loadFiles<HandlebarsTemplate>(directory, loadTemplate)
-}
-
-function loadPartials() {
-  const files = getFilesRecursive('src/partials')
-  for (const file of files) {
-    const name = getFileNameWithoutExtension(file)
-    if (!name)
-      throw new Error(`Could not find partial ${name}`)
-
-    const template = fs.readFileSync(file, 'utf8')
-    Handlebars.registerPartial(name, template, { noEscape: true })
-  }
-}
 
 export type FileWriter = (relativePath: string, content: string) => void
 
@@ -55,21 +33,6 @@ function convertArticle(templates: TemplateMap, writeFile: FileWriter, key: stri
     ...article.data,
   })
   writeFile(`${key}/index.html`, html)
-}
-
-export interface SiteResources {
-  pages: TemplateMap
-  templates: TemplateMap
-}
-
-export function loadSiteResources(): SiteResources {
-  loadPartials()
-  const templates = loadTemplates('src/templates')
-  const pages = loadTemplates('src/pages')
-  return {
-    templates,
-    pages,
-  }
 }
 
 export function writeHtmlFiles(outputDirectory: string, resources: SiteResources, articles: ArticleMap) {

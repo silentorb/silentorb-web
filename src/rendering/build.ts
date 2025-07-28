@@ -1,5 +1,6 @@
 import { loadAndPrepareArticles } from './input'
-import { loadSiteResources, writeHtmlFiles } from './output'
+import { writeHtmlFiles } from './output'
+import { loadSiteResources } from './templating'
 
 const fse = require('fs-extra')
 
@@ -8,15 +9,11 @@ const outputDirectory = 'dist'
 export async function buildSite() {
   require('dotenv').config()
   console.log('Building site')
-  const resources = await loadSiteResources()
+  const resources = loadSiteResources()
 
-  // MARLOTH_STORY_DIR should point to the marloth-story-docs/docs directory
-  const marlothDirectory = process.env.MARLOTH_STORY_DIR || './node_modules/marloth-story-docs/docs'
+  const articles = await loadAndPrepareArticles(resources.partials)
 
-  const articles = await loadAndPrepareArticles()
-
-  fse.removeSync(outputDirectory)
-  fse.ensureDirSync(outputDirectory)
+  fse.emptyDirSync(outputDirectory)
   fse.copySync('public', outputDirectory)
 
   await writeHtmlFiles(outputDirectory, resources, articles)

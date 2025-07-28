@@ -8,7 +8,7 @@
     "eslint": "./node_modules/.bin/eslint src/rendering/**/*.ts",
     "dev-server": "live-server dist --no-browser",
     "watch": "ts-node scripts/watch.ts",
-    "dev": "concurrently --kill-others \"npm:dev-server\" \"npm:watch\""
+    "dev": "concurrently --kill-others \"npm:watch\""
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -24,7 +24,7 @@
     "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
-    "chokidar": "^3.5.1",
+    "chokidar": "^3.6.0",
     "concurrently": "^7.3.0",
     "eslint": "^7.20.0",
     "live-server": "^1.2.2",

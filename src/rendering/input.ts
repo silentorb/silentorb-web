@@ -8,7 +8,7 @@ import { registerPartials } from './templating'
 
 const articlesDirectory = 'src/content'
 
-const baseGitUrl = 'https://github.com/silentorb/silentorb-web/blob/master/src/content'
+const baseGitUrl = 'https://github.com/silentorb/silentorb-web/blob/master/'
 
 function loadArticles(directory: string, defaults?: any): RawArticleMap {
   return loadFiles(directory, loadMarkDown(defaults))
@@ -25,7 +25,7 @@ async function loadGitMetaData(key: string, article: Article): Promise<Article> 
   const timestamp = commits[0]?.commit?.committer?.timestamp
   const date = new Date(timestamp * 1000)
   article.data.modifiedString = `Last modified: ${formateDateString(date)}`
-  article.data.gitUrl = `${baseGitUrl}/${key}.md`
+  article.data.gitUrl = `${baseGitUrl}/${article.file}`
   return article
 }
 

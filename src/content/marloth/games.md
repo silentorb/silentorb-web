@@ -12,6 +12,10 @@ Marloth is a game under development by [Silent Orb](/)
 
 * [Marloth Alpha 0.1](./game-0-1-alpha.md)
 
+## Design
+
+The designs for the latest Marloth game are publicly available at [Marloth Game | Notion](https://curse-tie-681.notion.site/Marloth-Game-57e5fdbb987949c0b2b69741a6a4bc08)
+
 ## The Book
 
 There's also a [fantasy book](./books.md)

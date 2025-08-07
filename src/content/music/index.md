@@ -7,4 +7,6 @@ files:
     formats: [ flac, mp3 ]
 ---
 
+# Songs
+
 {{childIndex}}

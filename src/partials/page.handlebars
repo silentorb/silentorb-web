@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/{{theme}}.css">
   <link rel="icon" type="{{{iconType}}}" href="{{{icon}}}">
+  {{#if (partialExists headers)}}
+    {{> headers }}
+  {{/if}}
   {{#each headers}}
     {{{this}}}
   {{/each}}

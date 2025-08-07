@@ -41,6 +41,10 @@ Changes between versions 1.0.0 and 2.0.0:
 
 You can purchase the first edition (Version 1.0.0) paperback book of "Marloth: A Child's Fairytale World" at <a target="_blank" href="http://www.amazon.com/Marloth-Childs-Fairytale-Christopher-Johnson/dp/0615484387">Amazon</a>
 
+## TWOLD
+
+For information about the second Marloth book, see [TWOLD](./twold.md).
+
 ## Play the Game
 
 There's also a [Marloth Game](./games.md)

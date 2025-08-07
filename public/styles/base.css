@@ -96,11 +96,14 @@ footer img {
     max-width: 110px;
 }
 
+article {
+    line-height: 1.75;
+}
+
 article.reading {
     background-color: #fffbf2;
     color: #222;
     padding: 40px;
-    line-height: 1.75;
 }
 
 article.reading a:link, article.reading a:visited {
@@ -126,57 +129,6 @@ blockquote {
 
 a:hover.title-metadata {
     color: black;
-}
-
-tr {
-    page-break-inside: avoid;
-    page-break-after: auto
-}
-
-thead {
-    display: table-header-group
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    overflow: auto;
-    page-break-inside: auto;
-    text-align: left
-}
-table {
-    padding: 0;
-    word-break: initial;
-}
-table tr {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-    background-color: #f8f8f8;
-}
-table th {
-    font-weight: bold;
-    border: 1px solid #dfe2e5;
-    border-bottom: 0;
-    margin: 0;
-    padding: 6px 13px;
-}
-table td {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 6px 13px;
-}
-table th:first-child,
-table td:first-child {
-    margin-top: 0;
-}
-table th:last-child,
-table td:last-child {
-    margin-bottom: 0;
 }
 
 .side-fill {

@@ -11,6 +11,13 @@ function loadTemplates(load: ContentLoader<HandlebarsTemplate>): (directory: str
   return directory => loadFiles<HandlebarsTemplate>(directory, load)
 }
 
+export function initializeHandlebarsHelpers(handlebars: any) {
+  handlebars.registerHelper('partialExists', function (partial: string) {
+    handlebars
+    return false
+  })
+}
+
 export function loadPartials() {
   const files = getFilesRecursive('src/partials')
   return new Map(
@@ -34,6 +41,7 @@ export function registerPartials(handlebars: any, partials: Map<string, any>) {
 export function loadSiteResources(): SiteResources {
   const partials = loadPartials()
   const handlebars = Handlebars.create()
+  initializeHandlebarsHelpers(handlebars)
   registerPartials(handlebars, partials)
   const loadSingle = loadTemplate(handlebars)
   const loadMany = loadTemplates(loadSingle)

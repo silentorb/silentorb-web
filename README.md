@@ -40,6 +40,14 @@ bash scripts/serve-static-site.sh
 
 A full copy of the pre-migration Handlebars generator lives in `_legacy-src/` (gitignored). Recreate from git history if missing. Run `bun scripts/migrate-legacy-content.ts` to regenerate Tome content from that archive.
 
-## CI
+## CI / deploy
 
-AWS CodeBuild (`buildspec.yaml`) runs the Tome static site build and publishes `dist/**` to S3.
+GitHub Actions (`.github/workflows/deploy-static-site.yml`) builds the site in the repo Docker image, syncs `dist/` to S3, and invalidates CloudFront on pushes to `main` (and manual dispatch).
+
+Simulate the CI build locally (requires Docker and a `tome` checkout):
+
+```bash
+TOME_ROOT=../tome bun run web:build:ci
+```
+
+See [`docs/features/static-website-deploy.md`](docs/features/static-website-deploy.md) for AWS OIDC setup and troubleshooting.

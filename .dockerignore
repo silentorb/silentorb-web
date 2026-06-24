@@ -1,0 +1,19 @@
+# Large paths not needed for CI image build (bind-mounted at run time).
+content/
+dist/
+data/
+public/
+.git/
+.github/
+
+# Local / ephemeral (also in .gitignore)
+node_modules/
+_legacy-src/
+.env
+.env.*
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.md
+!docs/**/*.md

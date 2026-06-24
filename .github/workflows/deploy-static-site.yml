@@ -1,0 +1,72 @@
+name: Deploy static site
+
+# Tome package changes (silentorb/tome) do not auto-trigger this workflow.
+# Redeploy after tome updates via workflow_dispatch or by bumping vars.TOME_REF.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - content/**
+      - public/**
+      - package.json
+      - scripts/ci-build-static-site.sh
+      - scripts/build-static-site.sh
+      - .devcontainer/**
+      - .github/workflows/deploy-static-site.yml
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-static-site
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout silentorb-web
+        uses: actions/checkout@v4
+
+      - name: Checkout tome
+        uses: actions/checkout@v4
+        with:
+          repository: silentorb/tome
+          path: tome
+          ref: ${{ vars.TOME_REF || 'main' }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build devcontainer image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: .devcontainer/Dockerfile
+          load: true
+          tags: silentorb-ci:local
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build static site
+        env:
+          TOME_ROOT: ${{ github.workspace }}/tome
+        run: bash scripts/ci-build-static-site.sh --run-only
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Sync to S3
+        run: aws s3 sync dist/ "s3://${{ vars.S3_BUCKET }}/" --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"

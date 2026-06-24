@@ -17,6 +17,7 @@
   },
   "branding": {
     "staticSiteHeader": "Silent Orb",
-    "appTitle": "Silent Orb"
+    "appTitle": "Silent Orb",
+    "staticSiteFooterOrganization": "Silent Orb"
   }
 }

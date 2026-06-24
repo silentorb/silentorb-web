@@ -1,0 +1,17 @@
+{
+  "name": "silentorb-web",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/silentorb-web",
+  "shutdownAction": "stopContainer",
+  "forwardPorts": [8080],
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.eol": "\n"
+      }
+    }
+  }
+}

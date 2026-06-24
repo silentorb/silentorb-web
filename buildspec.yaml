@@ -3,18 +3,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 20
     commands:
-      - echo Nothing to install
+      - curl -fsSL https://bun.sh/install | bash
+      - export BUN_INSTALL="$HOME/.bun"
+      - export PATH="$BUN_INSTALL/bin:$PATH"
+      - git clone --depth 1 https://github.com/silentorb/tome.git "$CODEBUILD_SRC_DIR/tome"
+      - cd "$CODEBUILD_SRC_DIR/tome" && bun install
   pre_build:
     commands:
-      - yarn install
+      - export BUN_INSTALL="$HOME/.bun"
+      - export PATH="$BUN_INSTALL/bin:$PATH"
+      - export TOME_ROOT="$CODEBUILD_SRC_DIR/tome"
+      - cd "$CODEBUILD_SRC_DIR"
+      - bash scripts/build-static-site.sh
   build:
     commands:
-      - yarn run build
-  post_build:
-    commands:
-      - aws s3 rm --recursive "s3://${ARTIFACTS_BUCKET}/"
+      - echo "Static site built in dist/"
 artifacts:
   base-directory: dist
   files:

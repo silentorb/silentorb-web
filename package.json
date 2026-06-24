@@ -4,30 +4,8 @@
   "author": "Christopher W. Johnson",
   "private": true,
   "scripts": {
-    "build": "./node_modules/.bin/ts-node scripts/build.ts",
-    "eslint": "./node_modules/.bin/eslint src/rendering/**/*.ts",
-    "dev-server": "live-server dist --no-browser",
-    "watch": "ts-node scripts/watch.ts",
-    "dev": "concurrently --kill-others \"npm:watch\""
-  },
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "fs-extra": "^9.1.0",
-    "gray-matter": "^4.0.2",
-    "handlebars": "^4.7.7",
-    "isomorphic-git": "^1.19.1",
-    "marked": "^2.0.1",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.9.4"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.31",
-    "@typescript-eslint/eslint-plugin": "^4.15.2",
-    "@typescript-eslint/parser": "^4.15.2",
-    "chokidar": "^3.6.0",
-    "concurrently": "^7.3.0",
-    "eslint": "^7.20.0",
-    "live-server": "^1.2.2",
-    "markdown-link-check": "^3.10.3"
+    "content:sync": "bun -e \"import { openContentGraph } from 'tome-db/content'; const { db } = openContentGraph(process.env.TOME_CONTENT_PATH ?? 'content', process.env.TOME_DB_PATH ?? 'data/tome.sqlite'); db.close(); console.log('Synced content → data/tome.sqlite');\"",
+    "web:build": "bash scripts/build-static-site.sh",
+    "web:serve": "bash scripts/serve-static-site.sh"
   }
 }

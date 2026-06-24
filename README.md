@@ -1,31 +1,45 @@
 # Silent Orb Website
 
-Legacy TypeScript static-site generator (Handlebars + markdown). Output: `dist/`.
+Static corporate site built with [Tome](https://github.com/silentorb/tome) (`tome-static-site` + Astro). Output: `dist/`.
+
+## Content
+
+- **Pages:** `content/data/{id}.md` with `url_alias` frontmatter (legacy URL paths preserved).
+- **Model:** `content/model/workspace.json` — `staticSite.homeNodeId` points at the site home node.
+- **Cache:** `data/tome.sqlite` (gitignored).
 
 ## Development
 
-### Standalone
-
-Open this repository in VS Code / Cursor and **Reopen in Container** (`.devcontainer/`). Then run the **Silentorb Web: dev** or **Silentorb Web: build** task, or:
-
-```bash
-yarn install
-yarn dev    # watch + http://127.0.0.1:8080/
-yarn build  # → dist/
-```
-
-### silentorb-workbench
+### silentorb-workbench (recommended)
 
 Clone as a sibling of [silentorb-workbench](https://github.com/silentorb/silentorb-workbench):
 
 ```
 parent/
   silentorb-workbench/
-  silentorb-web/    # git@github.com:silentorb/silentorb-web.git
+  silentorb-web/
 ```
 
-Enable the `silentorb-web` Compose profile in workbench `devcontainer.json`, rebuild, and use workbench tasks **Silentorb Web: dev** / **build**.
+From the workbench root:
 
-## Migration
+```bash
+bash scripts/build-silentorb-web.sh   # → repos/silentorb-web/dist/
+bash scripts/serve-silentorb-web.sh   # http://127.0.0.1:8080/
+```
 
-A planned follow-up will port this site to the Tome stack (Bun + Astro). The current setup is the reference baseline for that migration.
+VS Code tasks: **Silentorb Web: build** / **Silentorb Web: serve**.
+
+From this repo:
+
+```bash
+bash scripts/build-static-site.sh
+bash scripts/serve-static-site.sh
+```
+
+### Legacy reference
+
+A full copy of the pre-migration Handlebars generator lives in `_legacy-src/` (gitignored). Recreate from git history if missing. Run `bun scripts/migrate-legacy-content.ts` to regenerate Tome content from that archive.
+
+## CI
+
+AWS CodeBuild (`buildspec.yaml`) runs the Tome static site build and publishes `dist/**` to S3.

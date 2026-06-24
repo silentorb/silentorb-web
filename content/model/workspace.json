@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "homeNodeId": "b69451748efa6c656a107e5fabbcbf27",
+  "archiveNodeId": "eb27fb09bdfa0e0bd7674b75c46688e4",
+  "protectedNodeIds": [
+    "b69451748efa6c656a107e5fabbcbf27",
+    "eb27fb09bdfa0e0bd7674b75c46688e4"
+  ],
+  "graphExplorer": {
+    "defaultAnchorNodeId": "b69451748efa6c656a107e5fabbcbf27"
+  },
+  "staticSite": {
+    "homeNodeId": "b69451748efa6c656a107e5fabbcbf27"
+  },
+  "sidebar": {
+    "links": []
+  },
+  "branding": {
+    "staticSiteHeader": "Silent Orb",
+    "appTitle": "Silent Orb"
+  }
+}

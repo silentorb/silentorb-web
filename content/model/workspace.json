@@ -12,9 +12,7 @@
   "staticSite": {
     "homeNodeId": "b69451748efa6c656a107e5fabbcbf27"
   },
-  "sidebar": {
-    "links": []
-  },
+  "quickLinks": [],
   "branding": {
     "staticSiteHeader": "Silent Orb",
     "appTitle": "Silent Orb",

@@ -209,7 +209,7 @@ function main(): void {
     protectedNodeIds: [HOME_NODE_ID, ARCHIVE_NODE_ID],
     graphExplorer: { defaultAnchorNodeId: HOME_NODE_ID },
     staticSite: { homeNodeId: HOME_NODE_ID },
-    sidebar: { links: [] },
+    quickLinks: [],
     branding: { staticSiteHeader: "Silent Orb", appTitle: "Silent Orb" },
   });
 

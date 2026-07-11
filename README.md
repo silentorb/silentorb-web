@@ -4,7 +4,7 @@ Static corporate site built with [Tome](https://github.com/silentorb/tome) (`tom
 
 ## Content
 
-- **Pages:** `content/data/{id}.md` with `url_alias` frontmatter (legacy URL paths preserved).
+- **Pages:** `content/data/{shard}/{id}.md` with `url_alias` frontmatter (legacy URL paths preserved).
 - **Model:** `content/model/workspace.json` — `staticSite.homeNodeId` points at the site home node.
 - **Cache:** `data/tome.sqlite` (gitignored).
 

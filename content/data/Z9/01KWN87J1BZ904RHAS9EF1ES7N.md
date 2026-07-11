@@ -26,7 +26,7 @@ The primary causes of failure are:
 
 ## Value
 
-* Beyond standard failure and into the realm of success is another form of failure: overvaluing a goal
+* There is a form of failure that can happen even when there is success: overvaluing a goal
 * A venture can effectively fail if success is overvalued to the point that the cost exceeds the benefit
 * As with most of life, business is about appraisal—knowing the value of a thing
 

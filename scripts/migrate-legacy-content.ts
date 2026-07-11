@@ -131,6 +131,14 @@ function serializeNode(properties: Record<string, unknown>, body: string): strin
   return `---\n${yamlBlock}\n---\n${normalizedBody}`;
 }
 
+/** Entropy-sharded path: `data/{id[10:12]}/{id}.md` (matches tome-db). */
+function writeNodeFile(id: string, properties: Record<string, unknown>, body: string): void {
+  const shard = id.slice(10, 12);
+  const dir = join(DATA_DIR, shard);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, `${id}.md`), serializeNode(properties, body), "utf-8");
+}
+
 function writeJson(path: string, value: unknown): void {
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf-8");
 }
@@ -167,7 +175,7 @@ function main(): void {
       title: article.title,
       url_alias: key,
     };
-    writeFileSync(join(DATA_DIR, `${id}.md`), serializeNode(properties, body.trim()), "utf-8");
+    writeNodeFile(id, properties, body.trim());
   }
 
   const homeBody = `![Silent Orb](/images/silentorb-dark.png)
@@ -181,17 +189,8 @@ function main(): void {
 - [GitHub](https://github.com/silentorb)
 `;
 
-  writeFileSync(
-    join(DATA_DIR, `${HOME_NODE_ID}.md`),
-    serializeNode({ title: "Silent Orb" }, homeBody.trim()),
-    "utf-8",
-  );
-
-  writeFileSync(
-    join(DATA_DIR, `${ARCHIVE_NODE_ID}.md`),
-    serializeNode({ title: "Archive" }, ""),
-    "utf-8",
-  );
+  writeNodeFile(HOME_NODE_ID, { title: "Silent Orb" }, homeBody.trim());
+  writeNodeFile(ARCHIVE_NODE_ID, { title: "Archive" }, "");
 
   writeJson(join(DATA_DIR, "relationships.json"), { version: 2, relationships: [] });
   writeJson(join(MODEL_DIR, "schema.json"), { version: 1, relationshipRules: [], enums: {} });

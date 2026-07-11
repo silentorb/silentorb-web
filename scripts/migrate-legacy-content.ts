@@ -194,12 +194,12 @@ function main(): void {
 
   writeJson(join(DATA_DIR, "relationships.json"), { version: 2, relationships: [] });
   writeJson(join(MODEL_DIR, "schema.json"), { version: 1, relationshipRules: [], enums: {} });
-  writeJson(join(MODEL_DIR, "relationship-types.json"), { version: 1, types: {} });
+  writeJson(join(MODEL_DIR, "associations.json"), { version: 1, associations: {} });
   writeJson(join(MODEL_DIR, "dynamic-fields.json"), { version: 1, fields: [], columnSets: [] });
   writeJson(join(MODEL_DIR, "views.json"), { version: 1, nodes: {} });
   writeJson(join(MODEL_DIR, "table-schemas.json"), { version: 1, tables: {} });
   writeJson(join(MODEL_DIR, "extensions.json"), { version: 1, extensions: [], components: [] });
-  writeJson(join(MODEL_DIR, "ordered-associations.json"), { version: 1, configs: [] });
+  writeJson(join(MODEL_DIR, "ordered-collections.json"), { version: 1, configs: [] });
 
   writeJson(join(MODEL_DIR, "workspace.json"), {
     version: 1,

@@ -198,7 +198,7 @@ function main(): void {
   mkdirSync(join(CONTENT_ROOT, "archive", "nodes"), { recursive: true });
   mkdirSync(join(CONTENT_ROOT, "archive", "relationships"), { recursive: true });
   writeJson(join(MODEL_DIR, "associations.json"), { version: 1, associations: {} });
-  writeJson(join(MODEL_DIR, "dynamic-fields.json"), { version: 1, fields: [], columnSets: [] });
+  writeJson(join(MODEL_DIR, "dynamic-properties.json"), { version: 1, properties: [], columnSets: [] });
   writeJson(join(MODEL_DIR, "views.json"), { version: 1, nodes: {} });
   writeJson(join(MODEL_DIR, "table-schemas.json"), { version: 1, tables: {} });
   writeJson(join(MODEL_DIR, "extensions.json"), { version: 1, extensions: [], components: [] });

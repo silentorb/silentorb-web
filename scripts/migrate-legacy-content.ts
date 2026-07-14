@@ -131,10 +131,10 @@ function serializeNode(properties: Record<string, unknown>, body: string): strin
   return `---\n${yamlBlock}\n---\n${normalizedBody}`;
 }
 
-/** Entropy-sharded path: `data/{id[10:12]}/{id}.md` (matches tome-db). */
+/** Entropy-sharded path: `data/nodes/{id[10:12]}/{id}.md` (matches tome-flatfile). */
 function writeNodeFile(id: string, properties: Record<string, unknown>, body: string): void {
   const shard = id.slice(10, 12);
-  const dir = join(DATA_DIR, shard);
+  const dir = join(DATA_DIR, "nodes", shard);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, `${id}.md`), serializeNode(properties, body), "utf-8");
 }
@@ -192,8 +192,11 @@ function main(): void {
   writeNodeFile(HOME_NODE_ID, { title: "Silent Orb" }, homeBody.trim());
   writeNodeFile(ARCHIVE_NODE_ID, { title: "Archive" }, "");
 
-  writeJson(join(DATA_DIR, "relationships.json"), { version: 2, relationships: [] });
   writeJson(join(MODEL_DIR, "schema.json"), { version: 1, relationshipRules: [], enums: {} });
+  mkdirSync(join(CONTENT_ROOT, "data", "nodes"), { recursive: true });
+  mkdirSync(join(CONTENT_ROOT, "data", "relationships"), { recursive: true });
+  mkdirSync(join(CONTENT_ROOT, "archive", "nodes"), { recursive: true });
+  mkdirSync(join(CONTENT_ROOT, "archive", "relationships"), { recursive: true });
   writeJson(join(MODEL_DIR, "associations.json"), { version: 1, associations: {} });
   writeJson(join(MODEL_DIR, "dynamic-fields.json"), { version: 1, fields: [], columnSets: [] });
   writeJson(join(MODEL_DIR, "views.json"), { version: 1, nodes: {} });

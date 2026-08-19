@@ -6,6 +6,9 @@ SILENTORB_CI_IMAGE="${SILENTORB_CI_IMAGE:-silentorb-ci:local}"
 SILENTORB_CI_WORKSPACE="${SILENTORB_CI_WORKSPACE:-/workspaces/silentorb-web}"
 TOME_ROOT="${TOME_ROOT:-${ROOT}/tome}"
 TOME_CI_WORKSPACE="${TOME_CI_WORKSPACE:-/workspaces/tome}"
+# Tome workspaces include ../imp/packages/*; Imp must sit next to tome inside the container.
+IMP_ROOT="${IMP_ROOT:-$(dirname "${TOME_ROOT}")/imp}"
+IMP_CI_WORKSPACE="${IMP_CI_WORKSPACE:-/workspaces/imp}"
 
 usage() {
   cat <<EOF
@@ -13,13 +16,15 @@ Usage: ci-build-static-site.sh [--run-only | -h | --help]
 
 Build the static site the same way GitHub Actions does.
 
-Requires the tome repo at TOME_ROOT (default: ./tome next to silentorb-web).
+Requires tome at TOME_ROOT (default: ./tome) and imp-ts at IMP_ROOT
+(default: sibling of TOME_ROOT, ./imp).
 
   (default)   docker build + docker run
   --run-only  docker run only (CI after build-push-action)
 
 Environment:
   TOME_ROOT                Path to silentorb/tome checkout (default: \${ROOT}/tome)
+  IMP_ROOT                 Path to silentorb/imp-ts checkout (default: sibling of TOME_ROOT)
   SILENTORB_CI_IMAGE       Docker image tag (default: silentorb-ci:local)
   SILENTORB_CI_WORKSPACE   Mount path for silentorb-web inside container
   TOME_WEB_BASE            Site base path for embedding (optional)
@@ -41,6 +46,14 @@ require_tome() {
   fi
 }
 
+require_imp() {
+  if [[ ! -d "${IMP_ROOT}/packages/imp-spec" ]]; then
+    echo "imp repo not found at ${IMP_ROOT}" >&2
+    echo "Checkout silentorb/imp-ts into ./imp or set IMP_ROOT (tome workspaces resolve ../imp/packages/*)." >&2
+    exit 1
+  fi
+}
+
 build_image() {
   echo "Building devcontainer image → ${SILENTORB_CI_IMAGE}"
   docker build -f "${ROOT}/.devcontainer/Dockerfile" -t "${SILENTORB_CI_IMAGE}" "${ROOT}"
@@ -48,6 +61,7 @@ build_image() {
 
 run_build() {
   require_tome
+  require_imp
 
   local web_base_args=()
   local web_base="${TOME_WEB_BASE:-}"
@@ -58,11 +72,13 @@ run_build() {
   echo "Building static site in ${SILENTORB_CI_IMAGE}"
   echo "  silentorb-web: ${ROOT} → ${SILENTORB_CI_WORKSPACE}"
   echo "  tome:          ${TOME_ROOT} → ${TOME_CI_WORKSPACE}"
+  echo "  imp:           ${IMP_ROOT} → ${IMP_CI_WORKSPACE}"
 
   docker run --rm \
     --user "$(id -u):$(id -g)" \
     -v "${ROOT}:${SILENTORB_CI_WORKSPACE}:rw" \
     -v "${TOME_ROOT}:${TOME_CI_WORKSPACE}:rw" \
+    -v "${IMP_ROOT}:${IMP_CI_WORKSPACE}:rw" \
     -e "HOME=/tmp" \
     -e "BUN_INSTALL=/usr/local/bun" \
     -e "PATH=/usr/local/bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \

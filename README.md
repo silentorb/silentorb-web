@@ -44,7 +44,7 @@ A full copy of the pre-migration Handlebars generator lives in `_legacy-src/` (g
 
 GitHub Actions (`.github/workflows/deploy-static-site.yml`) builds the site in the repo Docker image, syncs `dist/` to S3, and invalidates CloudFront on pushes to `main` (and manual dispatch).
 
-Simulate the CI build locally (requires Docker and a `tome` checkout):
+Simulate the CI build locally (requires Docker and `tome` + `imp-ts` checkouts):
 
 ```bash
 TOME_ROOT=../tome bun run web:build:ci

@@ -37,7 +37,7 @@ The Dockerfile is CI/build infrastructure only — interactive development uses 
 1. **Trigger:** push to `main` matching path filters, or `workflow_dispatch`.
 2. **Checkout** silentorb-web, `silentorb/tome` (into `./tome`; ref from `vars.TOME_REF` or `main`), and `silentorb/imp-ts` (into `./imp`; ref from `vars.IMP_REF` or `main`).
 3. **Build Docker image** from `.devcontainer/Dockerfile` (Docker layer cache via GHA).
-4. **Build in container:** bind-mount silentorb-web, tome (`/workspaces/tome`), and Imp (`/workspaces/imp`), `bun install --frozen-lockfile` in tome workspace, run static-site tests, `bun run web:build` with `--content-dir`, `--db-path`, `--out-dir`, and `--public-dir` pointing at silentorb-web paths.
+4. **Build in container:** bind-mount silentorb-web, tome (`/workspaces/tome`), and Imp (`/workspaces/imp`), `bun install --frozen-lockfile` in Imp then tome workspace, run static-site tests, `bun run web:build` with `--content-dir`, `--db-path`, `--out-dir`, and `--public-dir` pointing at silentorb-web paths.
 5. **Assume IAM role** via GitHub OIDC (`aws-actions/configure-aws-credentials`).
 6. **Sync to S3:** `aws s3 sync dist/ s3://$S3_BUCKET/ --delete`.
 7. **Invalidate CloudFront:** `aws cloudfront create-invalidation --paths "/*"`.

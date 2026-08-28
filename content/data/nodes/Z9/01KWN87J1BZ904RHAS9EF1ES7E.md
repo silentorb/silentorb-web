@@ -16,7 +16,7 @@ url_alias: marloth/kotlin/game-0.1
   <img class="image-preview" title="Click to see full image" src="/images/marloth/game/marloth-0.1-preview.jpg"/>
 </a>
 
-This is the first alpha release of a new [Marloth game](./games.md).
+This is the first alpha release of a new [Marloth game](/marloth/games/).
 
 The game currently features a minimal game loop where the player gathers food and battles monsters to survive.
 

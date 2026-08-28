@@ -1,5 +1,6 @@
 ---
 title: Silent Orb
+static_site_layout: bare
 ---
 ![Silent Orb](/images/silentorb-dark.png)
 

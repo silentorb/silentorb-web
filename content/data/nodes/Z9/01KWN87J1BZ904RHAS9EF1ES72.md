@@ -1,6 +1,5 @@
 ---
 title: Marloth 0.1
-url_alias: marloth/game-0-1-alpha
 ---
 ## Overview
 
@@ -16,7 +15,7 @@ url_alias: marloth/game-0-1-alpha
   <img class="image-preview" title="Click to see full image" src="/images/marloth/game/marloth-0.1-unreal-preview.jpg"/>
 </a>
 
-This is the first alpha release of a new [Marloth game](/marloth/games/) created with [Unreal Engine](https://www.unrealengine.com).
+This is the first alpha release of a new [Marloth game](./01KWN87J1BZ904RHAS9EF1ES78.md) created with [Unreal Engine](https://www.unrealengine.com).
 
 The game currently features a minimal game loop where the player gathers food and battles monsters to survive.
 

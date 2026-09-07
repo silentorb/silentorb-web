@@ -1,11 +1,10 @@
 ---
 title: Product
-url_alias: business/product
 ---
 This is primarily a guide for product managers, but can also be helpful for stakeholders to understand the primary challenges facing product strategy and design. 
 
-* [Features](/business/product/features/)
-* [Scoping and Design](/business/product/scoping-and-design/)
+* [Features](./01KWN87J1BZ904RHAS9EF1ES76.md)
+* [Scoping and Design](./01KWN87J1BZ904RHAS9EF1ES7B.md)
 
-| [Previous: Strategy](/business/strategy/) | [Index](/business/tech-company-business-strategy/) | [Next: Customers](/business/customers/) |
+| [Previous: Strategy](./01KWN87J1BZ904RHAS9EF1ES6V.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Customers](./01KWN87J1BZ904RHAS9EF1ES7F.md) |
 |:------------------------------------:|:---------------------------------------------:|:----------------------------------:|

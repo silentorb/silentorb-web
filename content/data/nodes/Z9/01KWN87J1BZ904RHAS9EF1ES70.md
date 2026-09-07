@@ -1,6 +1,5 @@
 ---
 title: I Saw the Sun
-url_alias: music/i-saw-the-sun
 ---
 ## Listen
 

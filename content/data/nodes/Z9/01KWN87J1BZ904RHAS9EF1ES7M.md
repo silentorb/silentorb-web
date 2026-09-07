@@ -1,12 +1,11 @@
 ---
 title: Music
-url_alias: music
 ---
 # Songs
 
 
-- [Apology](/music/apology/)
-- [I Saw the Sun](/music/i-saw-the-sun/)
-- [The Lord's Lullaby](/music/the-lords-lullaby/)
-- [Walking by the Moonlight](/music/walking-by-the-moonlight/)
-- [Visage](/music/visage/)
+- [Apology](./01KWN87J1BZ904RHAS9EF1ES74.md)
+- [I Saw the Sun](./01KWN87J1BZ904RHAS9EF1ES70.md)
+- [The Lord's Lullaby](./01KWN87J1BZ904RHAS9EF1ES6Z.md)
+- [Walking by the Moonlight](./01KWN87J1BZ904RHAS9EF1ES79.md)
+- [Visage](./01KWN87J1BZ904RHAS9EF1ES75.md)

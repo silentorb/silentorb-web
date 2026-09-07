@@ -1,8 +1,7 @@
 ---
 title: Marloth
-url_alias: marloth/games
 ---
-Marloth is a game under development by [Silent Orb](/)
+Marloth is a game under development by [Silent Orb](./01KWN87J1BZ904RHAS9EF1ES7A.md)
 
 <style type="text/css">
   .image-preview {
@@ -18,7 +17,7 @@ Marloth is a game under development by [Silent Orb](/)
 
 ## Releases
 
-* [Marloth Alpha 0.1](/marloth/game-0-1-alpha/)
+* [Marloth Alpha 0.1](./01KWN87J1BZ904RHAS9EF1ES72.md)
 
 ## Design
 
@@ -26,10 +25,10 @@ The designs for the latest Marloth game are publicly available at [Marloth Game 
 
 ## The Book
 
-There's also a [fantasy book](/marloth/books/)
+There's also a [fantasy book](./01KWN87J1BZ904RHAS9EF1ES77.md)
 
 <!---
 ## Ye Old Game
 
-There was also a [previous Marloth game](/marloth/game-old/)
+There was also a [previous Marloth game](./01KWN87J1BZ904RHAS9EF1ES6S.md)
 -->

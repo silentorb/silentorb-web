@@ -1,6 +1,5 @@
 ---
 title: Apology
-url_alias: music/apology
 ---
 ## Lyrics
 

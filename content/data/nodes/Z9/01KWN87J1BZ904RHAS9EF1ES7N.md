@@ -1,6 +1,5 @@
 ---
 title: Appraisal
-url_alias: business/appraisal
 ---
 ## Cost
 
@@ -39,5 +38,5 @@ Before setting out on a venture:
 
 ---
 
-| [Loop: Communication](/business/operations/communication/) | [Index](/business/tech-company-business-strategy/) | [Next: Vision](/business/vision/) |
+| [Loop: Communication](./01KWN87J1BZ904RHAS9EF1ES73.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Vision](./01KWN87J1BZ904RHAS9EF1ES6T.md) |
 | :--------------------------------------------------: | :------------------------------------------: | :-------------------------: |

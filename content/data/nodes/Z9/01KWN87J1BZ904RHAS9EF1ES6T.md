@@ -1,6 +1,5 @@
 ---
 title: Vision
-url_alias: business/vision
 ---
 ## Vision and Strategy
 
@@ -15,5 +14,5 @@ url_alias: business/vision
 
 ---
 
-| [Previous: Appraisal](/business/appraisal/) | [Index](/business/tech-company-business-strategy/) | [Next: Strategy](/business/strategy/) |
+| [Previous: Appraisal](./01KWN87J1BZ904RHAS9EF1ES7N.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Strategy](./01KWN87J1BZ904RHAS9EF1ES6V.md) |
 | :-----------------------------------: | :------------------------------------------: | :-----------------------------: |

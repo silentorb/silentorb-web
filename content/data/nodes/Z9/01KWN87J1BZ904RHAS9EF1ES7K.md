@@ -1,6 +1,5 @@
 ---
 title: Responsibility
-url_alias: business/responsibility
 ---
 ## Mutual Benefit
 
@@ -32,5 +31,5 @@ Below is a common business story:
 
 ---
 
-| [Previous: Appraisal](/business/appraisal/) | [Index](/business/tech-company-business-strategy/) | [Next: Strategy](./strategy) |
+| [Previous: Appraisal](./01KWN87J1BZ904RHAS9EF1ES7N.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Strategy](./01KWN87J1BZ904RHAS9EF1ES6V.md) |
 | :-----------------------------------: | :------------------------------------------: | :--------------------------: |

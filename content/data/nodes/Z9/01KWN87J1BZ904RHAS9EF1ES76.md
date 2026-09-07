@@ -1,6 +1,5 @@
 ---
 title: Product Features
-url_alias: business/product/features
 ---
 ## Minimal Viable Product
 
@@ -33,5 +32,5 @@ url_alias: business/product/features
 
 ---
 
-| [Previous: Strategy](/business/strategy/) | [Index](/business/product/) | [Next: Scoping and Design](/business/product/scoping-and-design/) |
+| [Previous: Strategy](./01KWN87J1BZ904RHAS9EF1ES6V.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES6W.md) | [Next: Scoping and Design](./01KWN87J1BZ904RHAS9EF1ES7B.md) |
 |:------------------------------------:|:-------------------:|:---------------------------------------------------:|

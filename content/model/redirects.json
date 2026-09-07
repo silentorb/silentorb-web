@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "redirects": {
+    "business/appraisal": "01KWN87J1BZ904RHAS9EF1ES7N",
+    "business/customers": "01KWN87J1BZ904RHAS9EF1ES7F",
+    "business/execution": "01KWN87J1BZ904RHAS9EF1ES7G",
+    "business/operations/communication": "01KWN87J1BZ904RHAS9EF1ES73",
+    "business/operations/organization": "01KWN87J1BZ904RHAS9EF1ES71",
+    "business/product": "01KWN87J1BZ904RHAS9EF1ES6W",
+    "business/product/features": "01KWN87J1BZ904RHAS9EF1ES76",
+    "business/product/scoping-and-design": "01KWN87J1BZ904RHAS9EF1ES7B",
+    "business/responsibility": "01KWN87J1BZ904RHAS9EF1ES7K",
+    "business/strategy": "01KWN87J1BZ904RHAS9EF1ES6V",
+    "business/tech-company-business-strategy": "01KWN87J1BZ904RHAS9EF1ES7D",
+    "business/vision": "01KWN87J1BZ904RHAS9EF1ES6T",
+    "game-design/game-design": "01KWN87J1BZ904RHAS9EF1ES6X",
+    "marloth/books": "01KWN87J1BZ904RHAS9EF1ES77",
+    "marloth/game-0-1-alpha": "01KWN87J1BZ904RHAS9EF1ES72",
+    "marloth/game-old": "01KWN87J1BZ904RHAS9EF1ES6S",
+    "marloth/games": "01KWN87J1BZ904RHAS9EF1ES78",
+    "marloth/kotlin/game-0.1": "01KWN87J1BZ904RHAS9EF1ES7E",
+    "marloth/kotlin/game-0.1-manual": "01KWN87J1BZ904RHAS9EF1ES7C",
+    "marloth/narrative-design-and-dev": "01KWN87J1BZ904RHAS9EF1ES7H",
+    "marloth/twold": "01KWN87J1BZ904RHAS9EF1ES6Y",
+    "music": "01KWN87J1BZ904RHAS9EF1ES7M",
+    "music/apology": "01KWN87J1BZ904RHAS9EF1ES74",
+    "music/i-saw-the-sun": "01KWN87J1BZ904RHAS9EF1ES70",
+    "music/the-lords-lullaby": "01KWN87J1BZ904RHAS9EF1ES6Z",
+    "music/visage": "01KWN87J1BZ904RHAS9EF1ES75",
+    "music/walking-by-the-moonlight": "01KWN87J1BZ904RHAS9EF1ES79"
+  }
+}

@@ -1,6 +1,5 @@
 ---
 title: Visage
-url_alias: music/visage
 ---
 ## Listen
 

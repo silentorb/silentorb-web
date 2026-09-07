@@ -4,8 +4,9 @@ Static corporate site built with [Tome](https://github.com/silentorb/tome) (`tom
 
 ## Content
 
-- **Pages:** `content/data/{shard}/{id}.md` with `url_alias` frontmatter (legacy URL paths preserved).
-- **Model:** `content/model/workspace.json` — `staticSite.homeNodeId` points at the site home node.
+- **Pages:** `content/data/{shard}/{id}.md` — published at `/{id}/`. Author internal cross-links as `./{id}.md` (or `[[id]]`).
+- **Legacy paths:** `content/model/redirects.json` maps former pretty URLs (e.g. `business/vision`) to node ids; the static build writes HTML redirect stubs at those paths.
+- **Model:** `content/model/workspace.json` — `staticSite.homeNodeId` points at the site home node (also rendered as `/`).
 - **Cache:** `data/tome.sqlite` (gitignored).
 
 ## Development

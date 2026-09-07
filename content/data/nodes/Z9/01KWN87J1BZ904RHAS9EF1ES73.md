@@ -1,6 +1,5 @@
 ---
 title: Communication
-url_alias: business/operations/communication
 ---
 ## Ephemeral and Persistent Information
 
@@ -40,7 +39,7 @@ url_alias: business/operations/communication
 #### Meeting Persistence
 
 * It can be useful to record meetings, but recordings are not a practical digest of information
-* [Meeting notes](#documents) are a superior means of persisting meeting information
+* [Meeting notes](./01KWN87J1BZ904RHAS9EF1ES7A.md) are a superior means of persisting meeting information
 
 ## Structured Communication Solutions
 
@@ -86,5 +85,5 @@ url_alias: business/operations/communication
   * When those people are also vocal within that forum, other people's time is wasted as well
 * When a forum lacks essential participants, time is wasted for everyone within that forum and everyone dependent on the output of that forum
 
-| [Previous: Organization](/business/operations/organization/) | [Index](/business/tech-company-business-strategy/) | [Loop: Appraisal](/business/appraisal/) |
+| [Previous: Organization](./01KWN87J1BZ904RHAS9EF1ES71.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Loop: Appraisal](./01KWN87J1BZ904RHAS9EF1ES7N.md) |
 | :-----------------------------------------: | :-------------------------------------------: | :--------------------------------: |

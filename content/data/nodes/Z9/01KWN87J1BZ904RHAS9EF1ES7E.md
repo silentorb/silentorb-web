@@ -1,6 +1,5 @@
 ---
 title: Marloth 0.1
-url_alias: marloth/kotlin/game-0.1
 ---
 ## Overview
 
@@ -16,7 +15,7 @@ url_alias: marloth/kotlin/game-0.1
   <img class="image-preview" title="Click to see full image" src="/images/marloth/game/marloth-0.1-preview.jpg"/>
 </a>
 
-This is the first alpha release of a new [Marloth game](/marloth/games/).
+This is the first alpha release of a new [Marloth game](./01KWN87J1BZ904RHAS9EF1ES78.md).
 
 The game currently features a minimal game loop where the player gathers food and battles monsters to survive.
 
@@ -26,4 +25,4 @@ Currently Marloth only supports Windows.
 
 * [Marloth 0.1.0 Windows x64](https://static.silentorb.com/games/marloth-0.1.0-win64.zip)
 
-There's also a [game manual](/marloth/kotlin/game-0.1-manual/).
+There's also a [game manual](./01KWN87J1BZ904RHAS9EF1ES7C.md).

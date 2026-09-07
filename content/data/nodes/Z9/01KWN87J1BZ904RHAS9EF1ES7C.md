@@ -1,10 +1,9 @@
 ---
 title: Marloth 0.1 Manual
-url_alias: marloth/kotlin/game-0.1-manual
 ---
 ## Overview
 
-* [Marloth](/marloth/kotlin/game-0.1/) is a Roguelike Survival Horror game
+* [Marloth](./01KWN87J1BZ904RHAS9EF1ES7E.md) is a Roguelike Survival Horror game
 * Players explore a hostile world, gathering food and fighting monsters
 * This is an alpha version
 

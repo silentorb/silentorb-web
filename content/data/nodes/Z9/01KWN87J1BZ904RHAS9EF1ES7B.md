@@ -1,6 +1,5 @@
 ---
 title: Scoping and Design
-url_alias: business/product/scoping-and-design
 ---
 ## Overview
 
@@ -44,5 +43,5 @@ url_alias: business/product/scoping-and-design
 
 ---
 
-| [Previous: Features](/business/product/features/) | [Index](/business/product/) | [Next: Customers](/business/customers/) |
+| [Previous: Features](./01KWN87J1BZ904RHAS9EF1ES76.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES6W.md) | [Next: Customers](./01KWN87J1BZ904RHAS9EF1ES7F.md) |
 |:-----------------------------------:|:-------------------:|:----------------------------------:|

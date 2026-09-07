@@ -1,6 +1,5 @@
 ---
 title: Walking by the Moonlight
-url_alias: music/walking-by-the-moonlight
 ---
 ## Listen
 

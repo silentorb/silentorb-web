@@ -1,6 +1,5 @@
 ---
 title: Organization
-url_alias: business/operations/organization
 ---
 ## Roles
 
@@ -58,7 +57,7 @@ url_alias: business/operations/organization
 ### Routing by Role
 
 * Much of collaboration consists of routing concerns
-* [Roles](#roles) streamline concern-routing by making it obvious to whom and through whom a concern should be routed
+* [Roles](./01KWN87J1BZ904RHAS9EF1ES7A.md) streamline concern-routing by making it obvious to whom and through whom a concern should be routed
 
 ### Problem Flow
 
@@ -67,5 +66,5 @@ url_alias: business/operations/organization
 
 ---
 
-| [Previous: Execution](/business/execution/) | [Index](/business/tech-company-business-strategy/) | [Next: Communication](/business/operations/communication/) |
+| [Previous: Execution](./01KWN87J1BZ904RHAS9EF1ES7G.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Communication](./01KWN87J1BZ904RHAS9EF1ES73.md) |
 | :------------------------------------: | :-------------------------------------------: | :---------------------------------------: |

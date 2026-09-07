@@ -1,6 +1,5 @@
 ---
 title: Customers
-url_alias: business/customers
 ---
 ## Market Research
 
@@ -20,5 +19,5 @@ url_alias: business/customers
 
 ---
 
-| [Previous: Product](/business/product/) | [Index](/business/tech-company-business-strategy/) | [Next: Execution](/business/execution/) |
+| [Previous: Product](./01KWN87J1BZ904RHAS9EF1ES6W.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Execution](./01KWN87J1BZ904RHAS9EF1ES7G.md) |
 |:---------------------------------------:| :------------------------------------------: | :-------------------------------: |

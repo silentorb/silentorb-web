@@ -1,12 +1,11 @@
 ---
 title: TWOLD
-url_alias: marloth/twold
 ---
 # TWOLD
 
 ## Introduction
 
-TWOLD is the second book in the [Marloth](/marloth/books/) series.
+TWOLD is the second book in the [Marloth](./01KWN87J1BZ904RHAS9EF1ES77.md) series.
 
 ## Premise
 

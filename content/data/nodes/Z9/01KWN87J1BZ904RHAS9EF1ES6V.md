@@ -1,6 +1,5 @@
 ---
 title: Strategy
-url_alias: business/strategy
 ---
 ## Business
 
@@ -42,5 +41,5 @@ url_alias: business/strategy
 
 ---
 
-| [Previous: Vision](/business/vision/) | [Index](/business/tech-company-business-strategy/) | [Next: Product](/business/product/) |
+| [Previous: Vision](./01KWN87J1BZ904RHAS9EF1ES6T.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Product](./01KWN87J1BZ904RHAS9EF1ES6W.md) |
 | :-----------------------------: | :------------------------------------------: |:----------------------------:|

@@ -1,6 +1,5 @@
 ---
 title: The Lord's Lullaby
-url_alias: music/the-lords-lullaby
 ---
 ## Listen
 

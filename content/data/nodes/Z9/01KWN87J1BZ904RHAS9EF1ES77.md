@@ -1,6 +1,5 @@
 ---
 title: Marloth
-url_alias: marloth/books
 ---
 <style type="text/css">
   .book-cover {
@@ -47,8 +46,8 @@ You can purchase the first edition (Version 1.0.0) paperback book of "Marloth: A
 
 ## TWOLD
 
-For information about the second Marloth book, see [TWOLD](/marloth/twold/).
+For information about the second Marloth book, see [TWOLD](./01KWN87J1BZ904RHAS9EF1ES6Y.md).
 
 ## Play the Game
 
-There's also a [Marloth Game](/marloth/games/)
+There's also a [Marloth Game](./01KWN87J1BZ904RHAS9EF1ES78.md)

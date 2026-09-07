@@ -1,6 +1,5 @@
 ---
 title: Execution
-url_alias: business/execution
 ---
 ## Support and Maintenance
 
@@ -27,5 +26,5 @@ url_alias: business/execution
 
 ---
 
-| [Previous: Customers](/business/customers/) | [Index](/business/tech-company-business-strategy/) | [Next: Organization](/business/operations/organization/) |
+| [Previous: Customers](./01KWN87J1BZ904RHAS9EF1ES7F.md) | [Index](./01KWN87J1BZ904RHAS9EF1ES7D.md) | [Next: Organization](./01KWN87J1BZ904RHAS9EF1ES71.md) |
 | :-----------------------------------: | :------------------------------------------: | :------------------------------------------------: |

@@ -1,6 +1,5 @@
 ---
 title: Game Design
-url_alias: game-design/game-design
 ---
 By Christopher W. Johnson
 

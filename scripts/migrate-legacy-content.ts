@@ -202,7 +202,6 @@ function main(): void {
   writeJson(join(MODEL_DIR, "views.json"), { version: 1, nodes: {} });
   writeJson(join(MODEL_DIR, "table-schemas.json"), { version: 1, tables: {} });
   writeJson(join(MODEL_DIR, "extensions.json"), { version: 1, extensions: [], components: [] });
-  writeJson(join(MODEL_DIR, "table-presentation.json"), { version: 1, compositions: [] });
 
   writeJson(join(MODEL_DIR, "workspace.json"), {
     version: 1,

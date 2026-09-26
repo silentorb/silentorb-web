@@ -15,7 +15,7 @@ On pushes to `main` (and manual dispatch), a GitHub Actions workflow checks out 
 ## Requirements
 
 - **Must** build with the same Docker image used for CI parity (Bun + pinned lockfile from `silentorb/tome`).
-- **Must** checkout `silentorb/tome` and `silentorb/imp-ts` alongside silentorb-web in CI (build tooling lives in the tome repo; tome workspaces resolve Imp from `../imp/packages/*`).
+- **Must** checkout `silentorb/tome` and `silentorb/imp-ts` alongside silentorb-web in CI (build tooling lives in the tome repo; tome workspaces resolve Imp from `../imp-ts/packages/*`).
 - **Must** run `tome-static-site` tests and `web:build` to produce `dist/` (see [`static-website.md`](https://github.com/silentorb/tome/blob/main/docs/features/static-website.md) in the tome repo).
 - **Must** deploy on relevant changes to `main` via path filters (content, public assets, CI scripts, Dockerfile, workflow).
 - **Must** replace bucket contents on each deploy (`aws s3 sync --delete`).
@@ -35,9 +35,9 @@ The Dockerfile is CI/build infrastructure only — interactive development uses 
 ## Behavior / pipeline
 
 1. **Trigger:** push to `main` matching path filters, or `workflow_dispatch`.
-2. **Checkout** silentorb-web, `silentorb/tome` (into `./tome`; ref from `vars.TOME_REF` or `main`), and `silentorb/imp-ts` (into `./imp`; ref from `vars.IMP_REF` or `main`).
+2. **Checkout** silentorb-web, `silentorb/tome` (into `./tome`; ref from `vars.TOME_REF` or `main`), and `silentorb/imp-ts` (into `./imp-ts`; ref from `vars.IMP_REF` or `main`).
 3. **Build Docker image** from `.devcontainer/Dockerfile` (Docker layer cache via GHA).
-4. **Build in container:** bind-mount silentorb-web, tome (`/workspaces/tome`), and Imp (`/workspaces/imp`), `bun install --frozen-lockfile` in Imp then tome workspace, run static-site tests, `bun run web:build` with `--content-dir`, `--db-path`, `--out-dir`, and `--public-dir` pointing at silentorb-web paths.
+4. **Build in container:** bind-mount silentorb-web, tome (`/workspaces/tome`), and Imp (`/workspaces/imp-ts`), `bun install --frozen-lockfile` in Imp then tome workspace, run static-site tests, `bun run web:build` with `--content-dir`, `--db-path`, `--out-dir`, and `--public-dir` pointing at silentorb-web paths.
 5. **Assume IAM role** via GitHub OIDC (`aws-actions/configure-aws-credentials`).
 6. **Sync to S3:** `aws s3 sync dist/ s3://$S3_BUCKET/ --delete`.
 7. **Invalidate CloudFront:** `aws cloudfront create-invalidation --paths "/*"`.
@@ -51,7 +51,7 @@ Concurrency group `deploy-static-site` with `cancel-in-progress: true` so overla
 | Site content | `content/` (git-tracked) |
 | Static assets | `public/` (git-tracked) |
 | Build tooling | `silentorb/tome` (`packages/tome-static-site/`, `packages/tome-db/`, `bun.lock`) |
-| Imp workspace packages | `silentorb/imp-ts` (`../imp/packages/*` from the tome checkout) |
+| Imp workspace packages | `silentorb/imp-ts` (`../imp-ts/packages/*` from the tome checkout) |
 | CI image | `.devcontainer/Dockerfile` |
 
 | Output | Destination |

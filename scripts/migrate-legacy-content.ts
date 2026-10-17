@@ -203,7 +203,7 @@ function main(): void {
   writeJson(join(MODEL_DIR, "table-schemas.json"), { version: 1, tables: {} });
   writeJson(join(MODEL_DIR, "extensions.json"), { version: 1, extensions: [], components: [] });
 
-  writeJson(join(MODEL_DIR, "workspace.json"), {
+  writeJson(join(MODEL_DIR, "corpus.json"), {
     version: 1,
     homeNodeId: HOME_NODE_ID,
     archiveNodeId: ARCHIVE_NODE_ID,

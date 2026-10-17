@@ -6,7 +6,7 @@ Static corporate site built with [Tome](https://github.com/silentorb/tome) (`tom
 
 - **Pages:** `content/data/{shard}/{id}.md` — published at `/{id}/`. Author internal cross-links as `./{id}.md` (or `[[id]]`).
 - **Legacy paths:** `content/model/redirects.json` maps former pretty URLs (e.g. `business/vision`) to node ids; the static build writes HTML redirect stubs at those paths.
-- **Model:** `content/model/workspace.json` — `staticSite.homeNodeId` points at the site home node (also rendered as `/`).
+- **Model:** `content/model/corpus.json` — `staticSite.homeNodeId` points at the site home node (also rendered as `/`).
 - **Cache:** `data/tome.sqlite` (gitignored).
 
 ## Development

@@ -1,6 +1,8 @@
 ---
 title: Silent Orb
 static_site_layout: bare
+modified_at: 2026-09-28T04:21:25.604Z
+created_at: 2026-09-28T04:21:25.604Z
 ---
 ![Silent Orb](/images/silentorb-dark.png)
 
@@ -11,3 +13,4 @@ static_site_layout: bare
 - [Marloth Game](./01KWN87J1BZ904RHAS9EF1ES78.md)
 - [Music](./01KWN87J1BZ904RHAS9EF1ES7M.md)
 - [GitHub](https://github.com/silentorb)
+
